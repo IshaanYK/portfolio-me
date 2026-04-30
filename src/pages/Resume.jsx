@@ -2,7 +2,7 @@ import PageTransition from '../components/PageTransition';
 import { Download, ExternalLink } from 'lucide-react';
 
 export default function Resume() {
-    const resumeUrl = '/resume.pdf'; // Ensure to place a resume.pdf in the public folder
+    const resumeUrl = `${import.meta.env.BASE_URL}resume.pdf`; // Ensure to place a resume.pdf in the public folder
 
     return (
         <PageTransition>

@@ -162,11 +162,18 @@ export const exp_exposure = [
     }
 ];
 
+const BASE = import.meta.env.BASE_URL;
+const resolveMedia = (arr) => arr.map(item => ({
+    ...item,
+    ...(item.img && { img: `${BASE}${item.img.replace(/^[/]+/, '')}` }),
+    ...(item.video && { video: `${BASE}${item.video.replace(/^[/]+/, '')}` })
+}));
+
 export const portfolioData = {
-    certs,
-    competitions,
-    leadership,
-    gallery,
+    certs: resolveMedia(certs),
+    competitions: resolveMedia(competitions),
+    leadership: resolveMedia(leadership),
+    gallery: resolveMedia(gallery),
     exp_internships,
     exp_leadership,
     exp_events,

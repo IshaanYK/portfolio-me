@@ -14,7 +14,7 @@ export default function VideoBackground() {
                 playsInline
                 className="absolute w-full h-full object-cover scale-105"
             >
-                <source src="/background.mp4" type="video/mp4" />
+                <source src={`${import.meta.env.BASE_URL}background.mp4`} type="video/mp4" />
                 {/* Fallback for browsers that don't support mp4 */}
                 Your browser does not support the video tag.
             </video>
