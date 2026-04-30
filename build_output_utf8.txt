@@ -1,0 +1,93 @@
+﻿[36mvite v7.3.1 [32mbuilding client environment for production...[36m[39m
+transforming...
+[32mΓ£ô[39m 11 modules transformed.
+node.exe : [31mΓ£ù[39m 
+Build failed in 314ms
+At E:\Program 
+Files\nodejs\npx.ps1:29 
+char:3
++   & $NODE_EXE 
+$NPX_CLI_JS $args
++   ~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~
+    + CategoryInfo       
+       : NotSpecified:   
+  ([31mΓ£ù[39m Build   
+  failed in 314ms:Str    
+ing) [], RemoteExcep    
+tion
+    + FullyQualifiedErro 
+   rId : NativeCommandE  
+  rror
+ 
+[31merror during build:
+[31m[@tailwindcss/vite:g
+enerate:build] Cannot 
+apply unknown utility 
+class `text-glow`[31m
+file: 
+[36mC:/Users/ISHAAN SEN/
+.gemini/antigravity/scrat
+ch/portfolio 
+me/src/index.css[31m
+    at 
+onInvalidCandidate (file:
+///C:/Users/ISHAAN%20SEN/
+.gemini/antigravity/scrat
+ch/portfolio%20me/node_mo
+dules/tailwindcss/dist/ch
+unk-L5IEUH3R.mjs:21:1511)
+    at $e (file:///C:/Use
+rs/ISHAAN%20SEN/.gemini/a
+ntigravity/scratch/portfo
+lio%20me/node_modules/tai
+lwindcss/dist/chunk-L5IEU
+H3R.mjs:16:37066)
+    at file:///C:/Users/I
+SHAAN%20SEN/.gemini/antig
+ravity/scratch/portfolio%
+20me/node_modules/tailwin
+dcss/dist/chunk-L5IEUH3R.
+mjs:21:355
+    at Ar (file:///C:/Use
+rs/ISHAAN%20SEN/.gemini/a
+ntigravity/scratch/portfo
+lio%20me/node_modules/tai
+lwindcss/dist/chunk-L5IEU
+H3R.mjs:3:1733)
+    at I (file:///C:/User
+s/ISHAAN%20SEN/.gemini/an
+tigravity/scratch/portfol
+io%20me/node_modules/tail
+windcss/dist/chunk-L5IEUH
+3R.mjs:3:1377)
+    at Ce (file:///C:/Use
+rs/ISHAAN%20SEN/.gemini/a
+ntigravity/scratch/portfo
+lio%20me/node_modules/tai
+lwindcss/dist/chunk-L5IEU
+H3R.mjs:21:172)
+    at Gi (file:///C:/Use
+rs/ISHAAN%20SEN/.gemini/a
+ntigravity/scratch/portfo
+lio%20me/node_modules/tai
+lwindcss/dist/chunk-L5IEU
+H3R.mjs:38:294)
+    at async ao (file:///
+C:/Users/ISHAAN%20SEN/.ge
+mini/antigravity/scratch/
+portfolio%20me/node_modul
+es/tailwindcss/dist/chunk
+-L5IEUH3R.mjs:38:631)
+    at async vf (file:///
+C:/Users/ISHAAN%20SEN/.ge
+mini/antigravity/scratch/
+portfolio%20me/node_modul
+es/tailwindcss/dist/chunk
+-L5IEUH3R.mjs:38:1406)
+    at async uu (file:///
+C:/Users/ISHAAN%20SEN/.ge
+mini/antigravity/scratch/
+portfolio%20me/node_modul
+es/@tailwindcss/node/dist
+/index.mjs:10:3458)[39m

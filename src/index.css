@@ -1,0 +1,55 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+@theme {
+  --color-electric-blue: #ffffff;
+  --color-neon-violet: #9ca3af;
+  --color-dark-bg: #000000;
+  --color-dark-surface: #0f172a;
+  --font-sans: 'Inter', 'Space Grotesk', system-ui, sans-serif;
+
+  --animate-blob: blob 7s infinite;
+}
+
+@layer base {
+  body {
+    @apply bg-dark-bg text-gray-100 font-sans antialiased overflow-x-hidden cursor-none select-none;
+    -webkit-user-select: none;
+    user-select: none;
+  }
+
+  input,
+  textarea {
+    @apply select-text;
+    -webkit-user-select: text;
+    user-select: text;
+  }
+}
+
+@layer utilities {
+  .glass {
+    @apply bg-dark-surface/40 backdrop-blur-2xl border border-white/5 shadow-2xl;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+  }
+
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-white via-gray-300 to-gray-500;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0d0d0d;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-white/20 rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-white/50;
+}

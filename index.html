@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ishaan Sen | AI Engineer & Researcher</title>
+  <meta name="description"
+    content="Portfolio of Ishaan Sen, AI Engineer, ML Researcher, and Intelligent Systems Architect. Explore projects like A.R.I.S.E., TrustMate, and more." />
+  <meta name="keywords"
+    content="Ishaan Sen, AI Engineer, Machine Learning, AI Researcher, LLM Systems, Next.js, React, Portfolio" />
+  <meta name="author" content="Ishaan Sen" />
+  <meta property="og:title" content="Ishaan Sen | AI Engineer" />
+  <meta property="og:description" content="AI Engineer building reasoning-driven intelligent systems." />
+  <meta property="og:type" content="website" />
+</head>
+
+<body>
+  <div id="root"></div>
+  <script type="module" src="/src/main.jsx"></script>
+
+  <!-- Copy Protection Script -->
+  <script>
+    // Disable Right Click (Context Menu)
+    document.addEventListener('contextmenu', function (e) {
+      if (e.target.tagName !== 'INPUT' && e.target.tagName !== 'TEXTAREA') {
+        e.preventDefault();
+      }
+    });
+
+    // Disable Ctrl+C / Cmd+C
+    document.addEventListener('keydown', function (e) {
+      if ((e.ctrlKey || e.metaKey) && (e.key === 'c' || e.key === 'C')) {
+        if (e.target.tagName !== 'INPUT' && e.target.tagName !== 'TEXTAREA') {
+          e.preventDefault();
+        }
+      }
+    });
+  </script>
+</body>
+
+</html>
