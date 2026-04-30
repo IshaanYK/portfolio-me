@@ -106,13 +106,13 @@ export default function Home() {
                     transition={{ duration: 0.8, delay: 0.6, ease: "easeOut" }}
                     className="flex flex-wrap gap-4 justify-center mb-24"
                 >
-                    <Link to="/projects" className="px-8 py-3 rounded-full bg-white text-dark-bg font-semibold hover:scale-105 transition-all duration-300 cursor-none">
+                    <Link to="/projects" className="px-8 py-3 rounded-full bg-electric-blue text-dark-bg font-bold shadow-[0_0_20px_rgba(6,182,212,0.4)] hover:shadow-[0_0_30px_rgba(6,182,212,0.8)] hover:scale-105 transition-all duration-300 cursor-none">
                         View Projects →
                     </Link>
-                    <Link to="/research" className="px-8 py-3 rounded-full border border-white/20 hover:border-white hover:bg-white/5 transition-all duration-300 cursor-none">
+                    <Link to="/research" className="px-8 py-3 rounded-full border border-electric-blue/40 text-electric-blue hover:border-electric-blue hover:bg-electric-blue/10 hover:shadow-[0_0_20px_rgba(6,182,212,0.2)] transition-all duration-300 cursor-none">
                         View Research →
                     </Link>
-                    <Link to="/contact" className="px-8 py-3 rounded-full border border-white/20 hover:border-white hover:bg-white/5 transition-all duration-300 cursor-none">
+                    <Link to="/contact" className="px-8 py-3 rounded-full border border-neon-violet/40 text-neon-violet hover:border-neon-violet hover:bg-neon-violet/10 hover:shadow-[0_0_20px_rgba(139,92,246,0.2)] transition-all duration-300 cursor-none">
                         Contact
                     </Link>
                 </motion.div>
@@ -263,11 +263,11 @@ export default function Home() {
                     transition={{ duration: 0.8, type: "spring" }}
                     className="w-full max-w-2xl text-center glass p-12 rounded-2xl relative overflow-hidden group"
                 >
-                    <div className="absolute inset-0 bg-gradient-to-r from-white/5 to-gray-400/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    <div className="absolute inset-0 bg-gradient-to-r from-electric-blue/10 to-neon-violet/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                     <p className="text-lg text-gray-300 mb-8 leading-relaxed relative z-10">
                         Interested in AI research collaborations, internships, or building intelligent systems together? Let's connect.
                     </p>
-                    <Link to="/contact" className="px-8 py-3 rounded-full bg-white text-dark-bg font-bold hover:scale-105 transition-all duration-300 inline-block relative z-10 cursor-none">
+                    <Link to="/contact" className="px-8 py-3 rounded-full bg-electric-blue text-dark-bg font-bold shadow-[0_0_20px_rgba(6,182,212,0.4)] hover:shadow-[0_0_40px_rgba(6,182,212,0.8)] hover:scale-105 transition-all duration-300 inline-block relative z-10 cursor-none">
                         Contact Me
                     </Link>
                 </motion.section>
