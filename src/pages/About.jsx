@@ -1,5 +1,7 @@
 import PageTransition from '../components/PageTransition';
-import { Network, Microscope, Layers, BrainCircuit, Cpu, GitMerge, Rocket } from 'lucide-react';
+import { Network, Microscope, Layers, BrainCircuit, Cpu, GitMerge, Rocket, GraduationCap } from 'lucide-react';
+import { socialPlatforms } from '../data/socialLinks';
+import SocialIcon from '../components/SocialIcon';
 
 export default function About() {
     return (
@@ -13,19 +15,23 @@ export default function About() {
                     <div className="glass p-8 md:p-12 rounded-2xl relative overflow-hidden text-left border border-white/5">
                         <div className="absolute top-0 right-0 w-96 h-96 bg-electric-blue/5 rounded-full blur-[100px] -mr-20 -mt-20 pointer-events-none" />
 
+                        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs font-mono text-electric-blue uppercase tracking-widest mb-4 relative z-10">
+                            <GraduationCap size={14} /> Indian Institute of Technology Madras (IIT Madras)
+                        </div>
+
                         <h2 className="text-2xl font-bold mb-6 text-white relative z-10">
                             Identity & Core Focus
                         </h2>
 
                         <div className="space-y-6 text-lg text-gray-300 leading-relaxed relative z-10 font-light text-left">
                             <p>
-                                I am an <strong className="text-white font-semibold flex-1">AI Developer and Research-Oriented Systems Engineer</strong> focused on building intelligent architectures that combine advanced models, reasoning frameworks, and engineered systems.
+                                I am an <strong className="text-white font-semibold">AI Systems Architect and Full-Stack Engineer</strong> at <strong className="text-white font-semibold">IIT Madras</strong>, dedicated to building autonomous multi-agent systems, real-time voice AI architectures, and low-latency intelligent software.
                             </p>
                             <p>
-                                While currently expanding my formal foundation at a technology-focused institute, my primary focus lies in the practical and theoretical engineering of cognitive systems. The core of my work explores how intelligence can be embedded effectively into real-world applications.
+                                Rather than viewing AI solely through pre-trained wrappers, I focus on the holistic engineering of cognitive engines—combining autonomous reasoning loops, persistent vector memory, tool execution runtimes, and hardware-aware quantization for edge and consumer systems.
                             </p>
                             <p>
-                                My expertise centers around <strong className="text-electric-blue font-semibold">Transformer-based architectures, Large Language Models (LLMs), Vision-Language Models (VLMs), and robust NLP systems</strong>. I design intelligence pipelines specifically for autonomous systems—such as robotic platforms, drones, and complex engineered environments—ensuring seamless model integration across modalities without being restricted to a single domain.
+                                My active work spans <strong className="text-electric-blue font-semibold">autonomous coding agents, real-time voice streaming over WebSockets, production RAG pipelines, and high-performance full-stack web platforms</strong> built on Next.js 15, FastAPI, and PyTorch.
                             </p>
                         </div>
                     </div>
@@ -99,6 +105,26 @@ export default function About() {
                                 <Rocket className="text-electric-blue" size={36} />
                             </div>
                         </div>
+                    </div>
+                </div>
+
+                {/* 5. Connect Strip */}
+                <div className="mt-16 text-center">
+                    <p className="text-xs uppercase tracking-widest text-gray-500 font-bold mb-4">Connect Directly Across Platforms</p>
+                    <div className="flex flex-wrap justify-center gap-2.5">
+                        {socialPlatforms.map((p) => (
+                            <a
+                                key={p.id}
+                                href={p.url}
+                                target={p.id === 'email' ? '_self' : '_blank'}
+                                rel="noopener noreferrer"
+                                className="flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/[0.03] border border-white/10 hover:border-electric-blue/50 hover:bg-white/[0.08] text-gray-400 hover:text-white transition-all text-xs font-medium group"
+                                title={`${p.name}: ${p.handle}`}
+                            >
+                                <SocialIcon type={p.iconType} size={14} className="group-hover:scale-110 transition-transform" />
+                                <span>{p.name}</span>
+                            </a>
+                        ))}
                     </div>
                 </div>
 

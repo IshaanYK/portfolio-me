@@ -4,64 +4,63 @@ import { BrainCircuit, Server, Code2, Database, LayoutTemplate, Activity } from 
 
 export default function Skills() {
     const aiEngineering = [
+        "Autonomous Multi-Agent Loops",
+        "Real-Time Voice AI (Whisper STT/TTS)",
+        "Production RAG & Vector Stores",
         "Transformer Architectures",
         "Large Language Models (LLMs)",
-        "Vision-Language Models (VLMs)",
-        "Natural Language Processing (NLP)",
-        "Chain-of-Thought Prompting",
-        "Model Quantization & Optimization",
-        "Local Inference Deployment",
-        "Agent-Based AI Systems"
+        "Prompt Taxonomy & Token Budgeting",
+        "Model Quantization (GGUF, AWQ)",
+        "Split-Brain Model Routing"
     ];
 
     const systemArchitecture = [
-        "Modular Architecture Design",
-        "Multi-Model Orchestration",
-        "Memory System Engineering",
-        "Tool-Augmented AI Pipelines",
-        "Hardware-Constrained AI Deployment",
-        "Distributed Logic Systems",
-        "Backend API Structuring",
-        "Workflow Automation Systems"
+        "Multi-Agent Orchestration",
+        "Bi-Directional WebSockets & SSE",
+        "Hardware-Constrained Inference",
+        "Tool-Augmented REPL Loops",
+        "Distributed Asyncio Pipelines",
+        "Zero-Overhead System Telemetry",
+        "Microservice & API Architecture",
+        "Docker Containerization"
     ];
 
     const programming = [
-        "Python",
-        "C++",
-        "C",
-        "FastAPI",
-        "Flask",
-        "Node.js",
-        "API Integration & Routing",
-        "CLI-Based Systems"
+        "Python (AsyncIO, PyTorch)",
+        "TypeScript & JavaScript (ES6+)",
+        "C++ / C (Systems & Algorithmic)",
+        "FastAPI & Node.js",
+        "Next.js 15 (App Router)",
+        "React 19 & WebGL",
+        "SQL (PostgreSQL) & Redis",
+        "REST & GraphQL APIs"
     ];
 
     const tooling = [
-        "LangChain",
-        "llama-cpp",
-        "TensorFlow",
-        "PyTorch",
-        "NumPy",
-        "QGIS",
-        "GDAL",
-        "Firebase",
-        "Google Drive API"
+        "PyTorch & LangChain",
+        "CrewAI & LlamaIndex",
+        "llama-cpp (CUDA Offloading)",
+        "Docker & Docker Compose",
+        "ChromaDB, Pinecone & pgvector",
+        "Git & GitHub Actions CI/CD",
+        "Firebase & Cloud Run",
+        "Linux & PowerShell"
     ];
 
     const frontend = [
-        "HTML",
-        "CSS",
-        "JavaScript",
-        "React",
-        "Framer Motion",
-        "Responsive UI Systems"
+        "Next.js 15 & React 19",
+        "Tailwind CSS v4",
+        "HTML5 Canvas & 60fps Physics",
+        "Framer Motion & Glassmorphism",
+        "Responsive Touch-First Layouts",
+        "Sub-Second TTFB Optimization"
     ];
 
     const workflow = [
-        "Linux",
-        "Git & GitHub",
-        "Modular Code Structuring",
-        "Hardware Optimization (CUDA, VRAM Constraints)"
+        "Linux CLI & Bash/PowerShell Scripting",
+        "LeetCode Algorithmic Problem Solving",
+        "CUDA Memory Profiling & VRAM Constraints",
+        "Test-Driven Modular Architecture"
     ];
 
     const containerVariants = {

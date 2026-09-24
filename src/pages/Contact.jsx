@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import PageTransition from '../components/PageTransition';
-import { Mail, Linkedin, Github, Send, MapPin, ExternalLink } from 'lucide-react';
+import { Send, MapPin, ExternalLink, Sparkles } from 'lucide-react';
+import { socialPlatforms } from '../data/socialLinks';
+import SocialIcon from '../components/SocialIcon';
 
 export default function Contact() {
     const [formData, setFormData] = useState({ name: '', email: '', phone: '', subject: '', message: '' });
@@ -44,68 +46,64 @@ ${formData.message}
             <div className="max-w-6xl mx-auto w-full pb-20 px-4 sm:px-6">
 
                 {/* SECTION HEADER */}
-                <div className="text-center mb-16 md:mb-24 flex flex-col items-center">
-                    <h1 className="text-4xl md:text-5xl font-bold mb-6 tracking-tight font-serif text-white">
-                        Let’s Connect
+                <div className="text-center mb-12 md:mb-16 flex flex-col items-center">
+                    <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs font-medium text-electric-blue uppercase tracking-widest mb-4">
+                        <Sparkles size={14} /> Connect & Collaborate
+                    </div>
+                    <h1 className="text-4xl md:text-5xl font-bold mb-4 tracking-tight font-serif text-white">
+                        Let’s Build Together
                     </h1>
                     <p className="text-gray-400 text-sm md:text-base max-w-2xl font-light tracking-wide leading-relaxed">
-                        Open to research collaboration, AI system development, technical discussions, and innovation partnerships.
+                        Open to research collaboration, autonomous AI system engineering, technical architecture discussions, and innovative ventures.
                     </p>
                 </div>
 
-                <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20">
+                <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14">
 
-                    {/* SECTION 1 - DIRECT CONTACT INFORMATION */}
-                    <div className="lg:col-span-5 space-y-10 flex flex-col justify-center">
-                        <div className="space-y-6">
+                    {/* SECTION 1 - DIRECT CONTACT & PLATFORMS */}
+                    <div className="lg:col-span-5 space-y-6 flex flex-col">
+                        <div className="flex items-center justify-between">
+                            <h2 className="text-xs uppercase tracking-widest text-gray-400 font-bold">Connect Across Platforms</h2>
+                            <span className="text-[11px] px-2 py-0.5 rounded bg-electric-blue/10 text-electric-blue border border-electric-blue/20">8 Active Channels</span>
+                        </div>
 
-                            {/* Email */}
-                            <a href="mailto:ishaansenres@gmail.com" className="flex items-center group p-4 border border-transparent hover:border-white/10 rounded-xl transition-all duration-300 hover:bg-white/5">
-                                <div className="p-3 bg-white/5 border border-white/10 rounded-lg group-hover:border-electric-blue/50 transition-colors mr-5">
-                                    <Mail className="text-gray-400 group-hover:text-electric-blue" size={24} />
-                                </div>
-                                <div className="flex-1">
-                                    <span className="block text-xs text-gray-500 font-semibold uppercase tracking-widest mb-1">Email</span>
-                                    <span className="text-sm md:text-base text-gray-200 group-hover:text-white transition-colors tracking-wide">ishaansenres@gmail.com</span>
-                                </div>
-                                <ExternalLink size={16} className="text-gray-500 opacity-0 group-hover:opacity-100 transition-opacity" />
-                            </a>
+                        {/* Interactive Platform Grid */}
+                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-2.5 max-h-[580px] overflow-y-auto pr-1">
+                            {socialPlatforms.map((platform) => (
+                                <a
+                                    key={platform.id}
+                                    href={platform.url}
+                                    target={platform.id === 'email' ? '_self' : '_blank'}
+                                    rel="noopener noreferrer"
+                                    className={`group flex items-center justify-between p-3 rounded-xl bg-white/[0.02] border border-white/10 hover:bg-white/[0.06] transition-all duration-300 ${platform.accent}`}
+                                >
+                                    <div className="flex items-center gap-3 min-w-0">
+                                        <div className="p-2.5 rounded-lg bg-white/5 border border-white/10 text-gray-300 group-hover:scale-110 transition-transform shrink-0">
+                                            <SocialIcon type={platform.iconType} size={18} />
+                                        </div>
+                                        <div className="min-w-0 text-left">
+                                            <div className="flex items-center gap-2">
+                                                <span className="text-sm font-semibold text-white group-hover:text-electric-blue transition-colors">
+                                                    {platform.name}
+                                                </span>
+                                                <span className={`text-[10px] px-1.5 py-0.2 rounded border font-mono ${platform.badgeBg}`}>
+                                                    {platform.category}
+                                                </span>
+                                            </div>
+                                            <span className="block text-xs text-gray-400 font-mono truncate group-hover:text-gray-200 transition-colors">
+                                                {platform.handle}
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <ExternalLink size={14} className="text-gray-500 opacity-40 group-hover:opacity-100 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all shrink-0 ml-2" />
+                                </a>
+                            ))}
+                        </div>
 
-                            {/* GitHub */}
-                            <a href="https://github.com/IshaanYK" target="_blank" rel="noopener noreferrer" className="flex items-center group p-4 border border-transparent hover:border-white/10 rounded-xl transition-all duration-300 hover:bg-white/5">
-                                <div className="p-3 bg-white/5 border border-white/10 rounded-lg group-hover:border-white/50 transition-colors mr-5">
-                                    <Github className="text-gray-400 group-hover:text-white" size={24} />
-                                </div>
-                                <div className="flex-1">
-                                    <span className="block text-xs text-gray-500 font-semibold uppercase tracking-widest mb-1">GitHub</span>
-                                    <span className="text-sm md:text-base text-gray-200 group-hover:text-white transition-colors tracking-wide">github.com/IshaanYK</span>
-                                </div>
-                                <ExternalLink size={16} className="text-gray-500 opacity-0 group-hover:opacity-100 transition-opacity" />
-                            </a>
-
-                            {/* LinkedIn */}
-                            <a href="https://www.linkedin.com/in/ishaan784" target="_blank" rel="noopener noreferrer" className="flex items-center group p-4 border border-transparent hover:border-white/10 rounded-xl transition-all duration-300 hover:bg-white/5">
-                                <div className="p-3 bg-white/5 border border-white/10 rounded-lg group-hover:border-[#0A66C2]/50 transition-colors mr-5">
-                                    <Linkedin className="text-gray-400 group-hover:text-[#0A66C2]" size={24} />
-                                </div>
-                                <div className="flex-1">
-                                    <span className="block text-xs text-gray-500 font-semibold uppercase tracking-widest mb-1">LinkedIn</span>
-                                    <span className="text-sm md:text-base text-gray-200 group-hover:text-white transition-colors tracking-wide">linkedin.com/in/ishaan784</span>
-                                </div>
-                                <ExternalLink size={16} className="text-gray-500 opacity-0 group-hover:opacity-100 transition-opacity" />
-                            </a>
-
-                            {/* Location */}
-                            <div className="flex items-center p-4 border border-transparent rounded-xl">
-                                <div className="p-3 bg-white/5 border border-white/10 rounded-lg mr-5">
-                                    <MapPin className="text-gray-400" size={24} />
-                                </div>
-                                <div>
-                                    <span className="block text-xs text-gray-500 font-semibold uppercase tracking-widest mb-1">Location</span>
-                                    <span className="text-sm md:text-base text-gray-200 tracking-wide">India</span>
-                                </div>
-                            </div>
-
+                        {/* Location indicator */}
+                        <div className="flex items-center gap-3 p-3 rounded-xl bg-white/[0.02] border border-white/5 text-gray-400 text-xs">
+                            <MapPin size={16} className="text-electric-blue shrink-0" />
+                            <span>Indian Institute of Technology Madras (IIT Madras) • Bhopal, India</span>
                         </div>
                     </div>
 

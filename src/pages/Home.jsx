@@ -2,8 +2,10 @@ import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import mammoth from 'mammoth';
 import PageTransition from '../components/PageTransition';
-import { X, Maximize2, Minimize2, Heart } from 'lucide-react';
+import { X, Maximize2, Minimize2, Heart, Sparkles } from 'lucide-react';
 import { motion } from 'framer-motion';
+import { socialPlatforms } from '../data/socialLinks';
+import SocialIcon from '../components/SocialIcon';
 
 export default function Home() {
     const [showDoc, setShowDoc] = useState(false);
@@ -44,10 +46,10 @@ export default function Home() {
     }, [showDoc, docHtml]);
 
     const stats = [
-        { label: 'Projects Built', value: '10+' },
-        { label: 'Hackathons', value: '4+' },
-        { label: 'AI Assistant Developed', value: '1' },
-        { label: 'Technologies Mastered', value: '7+' },
+        { label: 'Public Repositories', value: '28+' },
+        { label: 'GitHub Contributions', value: '1,190+' },
+        { label: 'Hackathons & Awards', value: '4+' },
+        { label: 'IIT Madras', value: 'Student' },
     ];
 
     const scrollToSection = (id) => {
@@ -73,6 +75,17 @@ export default function Home() {
     return (
         <PageTransition>
             <div className="flex flex-col items-center justify-center min-h-[80vh] text-center pt-10 pb-20">
+                {/* IIT MADRAS TAG */}
+                <motion.div
+                    initial={{ opacity: 0, y: -10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6 }}
+                    className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/5 border border-white/10 text-xs font-mono text-electric-blue uppercase tracking-widest mb-6"
+                >
+                    <span className="w-2 h-2 rounded-full bg-electric-blue animate-pulse"></span>
+                    IIT Madras • AI Systems Architect & Full-Stack Engineer
+                </motion.div>
+
                 {/* HERO SECTION */}
                 <motion.h1
                     initial={{ opacity: 0, y: 20 }}
@@ -88,23 +101,23 @@ export default function Home() {
                     transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
                     className="text-lg md:text-xl text-gray-300 mb-6 max-w-3xl font-light tracking-wide"
                 >
-                    Robotics AI | AIML | AI Development | Intelligent Systems Research
+                    Autonomous Multi-Agent Orchestration • Real-Time Voice AI • Low-Latency Systems
                 </motion.h2>
                 <motion.div
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ duration: 1, delay: 0.4 }}
-                    className="text-md md:text-lg text-gray-400 max-w-3xl mb-10 leading-relaxed space-y-2"
+                    className="text-md md:text-lg text-gray-400 max-w-3xl mb-8 leading-relaxed space-y-2 font-light"
                 >
-                    <p>I build AI-driven systems, models, and LLM architectures that automate engineering workflows.</p>
-                    <p>Currently developing A.R.I.S.E. and conducting advanced AI/ML research in intelligent reasoning systems.</p>
+                    <p>I design and build autonomous agent loops, voice streaming pipelines, and persistent reasoning systems.</p>
+                    <p>Engineering production architectures across PyTorch, Next.js, FastAPI, and local hardware-constrained models.</p>
                 </motion.div>
 
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8, delay: 0.6, ease: "easeOut" }}
-                    className="flex flex-wrap gap-4 justify-center mb-24"
+                    className="flex flex-wrap gap-4 justify-center mb-8"
                 >
                     <Link to="/projects" className="px-8 py-3 rounded-full bg-electric-blue text-dark-bg font-bold shadow-[0_0_20px_rgba(6,182,212,0.4)] hover:shadow-[0_0_30px_rgba(6,182,212,0.8)] hover:scale-105 transition-all duration-300 cursor-none">
                         View Projects →
@@ -113,8 +126,30 @@ export default function Home() {
                         View Research →
                     </Link>
                     <Link to="/contact" className="px-8 py-3 rounded-full border border-neon-violet/40 text-neon-violet hover:border-neon-violet hover:bg-neon-violet/10 hover:shadow-[0_0_20px_rgba(139,92,246,0.2)] transition-all duration-300 cursor-none">
-                        Contact
+                        Let’s Connect
                     </Link>
+                </motion.div>
+
+                {/* PLATFORM QUICK CONNECT BAR */}
+                <motion.div
+                    initial={{ opacity: 0, y: 15 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.8, delay: 0.7 }}
+                    className="flex flex-wrap justify-center items-center gap-2 max-w-4xl px-4 mb-20"
+                >
+                    {socialPlatforms.map((p) => (
+                        <a
+                            key={p.id}
+                            href={p.url}
+                            target={p.id === 'email' ? '_self' : '_blank'}
+                            rel="noopener noreferrer"
+                            className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/[0.03] border border-white/10 hover:border-electric-blue/50 hover:bg-white/[0.07] text-gray-400 hover:text-white transition-all text-xs font-medium group"
+                            title={`${p.name}: ${p.handle}`}
+                        >
+                            <SocialIcon type={p.iconType} size={14} className="group-hover:scale-110 transition-transform" />
+                            <span>{p.name}</span>
+                        </a>
+                    ))}
                 </motion.div>
 
                 {/* QUICK STATS SECTION */}

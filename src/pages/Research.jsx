@@ -58,9 +58,28 @@ export default function Research() {
                     <h1 className="text-3xl md:text-5xl font-bold mb-6">
                         Research <span className="text-gradient block mt-2 md:inline md:mt-0">&</span> Technical Exploration
                     </h1>
-                    <p className="text-gray-400 text-sm md:text-lg max-w-2xl font-light tracking-wide leading-relaxed">
-                        Ongoing study and analysis of advanced AI architectures, reasoning systems, and intelligent model orchestration.
+                    <p className="text-gray-400 text-sm md:text-lg max-w-2xl font-light tracking-wide leading-relaxed mb-6">
+                        Ongoing study and empirical analysis of autonomous multi-agent systems, real-time voice architectures, and hardware-constrained inference.
                     </p>
+                    <div className="flex flex-wrap items-center justify-center gap-3">
+                        <a
+                            href="https://www.researchgate.net/profile/Ishaan-Sen"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-teal-500/10 border border-teal-500/30 text-teal-300 hover:bg-teal-500/20 hover:border-teal-400 transition-all text-xs font-semibold tracking-wide group"
+                        >
+                            <span className="font-bold text-sm tracking-tighter text-teal-400">RG</span>
+                            <span>View ResearchGate Profile & Preprints →</span>
+                        </a>
+                        <a
+                            href="https://github.com/IshaanYK"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white/5 border border-white/10 text-gray-300 hover:border-white hover:text-white transition-all text-xs font-semibold tracking-wide"
+                        >
+                            <span>Open-Source Experiments on GitHub →</span>
+                        </a>
+                    </div>
                 </div>
 
                 <div className="flex flex-col gap-16 md:gap-24">

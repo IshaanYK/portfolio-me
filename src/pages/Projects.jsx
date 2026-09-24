@@ -5,78 +5,131 @@ import { Link } from 'react-router-dom';
 
 const projects = [
     {
-        title: "A.R.I.S.E.",
-        subtitle: "Artificial Responsive Intelligent System Engine",
-        overview: "A.R.I.S.E. is a fully offline, modular AI system engineered to explore multi-model cognitive architectures under real-world hardware constraints. Built using llama-cpp with CUDA offloading and persistent vector memory, the system operates entirely on consumer-grade hardware without cloud dependency.\n\nThe architecture implements a split-brain routing system that dynamically switches between specialized quantized models for conversational and logical tasks. The design prioritizes architectural intelligence, deterministic execution, and hardware-aware efficiency over brute-force scaling.",
-        tech: ["Python", "llama-cpp (CUDA Offloading)", "Llama 3.2 (3B, 4-bit GGUF)", "Qwen 2.5 Coder (1.5B, 4-bit GGUF)", "Local Vector Memory Store", "NumPy", "CLI Runtime"],
+        title: "Voice Call Agent",
+        subtitle: "Real-Time Autonomous Voice AI Platform",
+        category: "Voice AI & Agents",
+        overview: "An autonomous AI-powered voice agent configured to receive, parse, and converse via live phone and browser calls with sub-second STT/TTS latency.\n\nArchitected with bi-directional audio streaming over WebSockets, autonomous tool-calling loops, and dynamic context parsing to manage interruption handling, intent routing, and real-time database queries during live dialogue.",
+        tech: ["JavaScript", "Node.js", "FastAPI", "WebSockets", "Whisper STT", "TTS Engines", "Speech API", "Autonomous Tool Loops"],
         buttons: [
-            { label: "View LinkedIn Breakdown →", url: "https://www.linkedin.com/pulse/de-clouding-intelligence-why-i-built-modular-biological-ishaan-sen-ufstf", type: "external" },
-            { label: "View GitHub (v1 Repository) →", url: "https://github.com/IshaanYK/A.R.I.S.E-v1", type: "github" },
+            { label: "View GitHub Repository →", url: "https://github.com/IshaanYK/voice-call-agent", type: "github" },
             { label: "View Architecture →", url: "/#arise-architecture", type: "internal" }
         ],
         accent: "border-electric-blue",
         textAccent: "text-electric-blue"
     },
     {
-        title: "MindMate",
-        subtitle: "AI-Powered Mental Health Companion",
-        overview: "MindMate is an AI-driven mental wellness platform combining conversational intelligence, mood analytics, and automated wellness reporting. The system analyzes emotional patterns, generates structured insights, and integrates a trusted-contact alert mechanism within a privacy-focused modular backend.",
-        tech: ["HTML", "CSS", "JavaScript", "Flask", "Node.js", "Firebase", "Gemini API", "Framer Motion"],
+        title: "Gemini Local Agent",
+        subtitle: "Deep Reasoning Local Coding Agent & Tool Orchestrator",
+        category: "Autonomous Systems",
+        overview: "An autonomous software engineering and task execution agent powered by deep reasoning loops with zero cloud subscription dependency.\n\nFeatures persistent local vector memory, AST-based code parsing, full file-system inspection, self-healing terminal test execution, and dynamic tool orchestration capable of building and verifying multi-file projects.",
+        tech: ["Python", "Gemini API", "Local Vector Store", "AST Parser", "Tool-Use Loops", "CLI Runtime", "Self-Correction Engine"],
         buttons: [
-            { label: "View GitHub →", url: "https://github.com/IshaanYK/MindMate", type: "github" },
-            { label: "View LinkedIn →", url: "https://www.linkedin.com/posts/ishaan784_hackathon-versionbeta8-iste-activity-7390999195169722369-56HA", type: "external" }
+            { label: "View GitHub Repository →", url: "https://github.com/IshaanYK/gemini-1b-local-agent", type: "github" }
         ],
         accent: "border-neon-violet",
         textAccent: "text-neon-violet"
     },
     {
-        title: "Geospatial AI Automator",
-        subtitle: "Chain-of-Thought Spatial Intelligence System",
-        overview: "A Chain-of-Thought–based AI system designed to automate complex geospatial workflows through intelligent tool orchestration. The system reasons step-by-step like a GIS analyst and dynamically executes spatial operations such as flood-risk mapping, land-use classification, and site suitability analysis using integrated geospatial engines.",
-        tech: ["Python", "FastAPI", "LangChain", "QGIS", "GDAL", "OGR", "LLM APIs", "TensorFlow", "PyTorch", "Satellite Data (ISRO Bhuvan, Sentinel, Landsat)"],
+        title: "AI Work OS OpenEnv",
+        subtitle: "Multi-Agent Workplace Simulation & RL Benchmark",
+        category: "Multi-Agent AI",
+        overview: "An advanced production-grade workplace simulation environment where autonomous AI agents collaborate, negotiate, and execute complex business operations under reward-driven reinforcement learning hooks.\n\nFeatures containerized multi-agent execution, asynchronous task dispatching, live REST endpoints, and automated benchmark scoring.",
+        tech: ["Python", "PyTorch", "OpenEnv", "FastAPI", "Docker", "Multi-Agent Workflows", "RL Evaluation"],
         buttons: [
-            { label: "View LinkedIn →", url: "https://www.linkedin.com/posts/ishaan784_isro-hackathon-innovation-activity-7374681405185970176-nVC8", type: "external" }
+            { label: "View GitHub Repository →", url: "https://github.com/IshaanYK/ai-work-os-openenv", type: "github" }
         ],
         accent: "border-electric-blue",
         textAccent: "text-electric-blue"
     },
     {
-        title: "Gmail AI Inbox Assistant (v4.0)",
-        subtitle: "Intelligent Email Automation & Lifecycle Management System",
-        overview: "A Python-based automation system engineered to triage emails using weighted logic, manage attachment categorization, automate storage lifecycle processes, and generate real-time reporting via HTML dashboards and WhatsApp summaries.",
-        tech: ["Python", "EZGmail", "PyWhatKit", "Plyer", "HTML", "CSS", "Automation Scripts"],
+        title: "A.R.I.S.E. (v1.2)",
+        subtitle: "Artificial Responsive Intelligent System Engine",
+        category: "Cognitive Architectures",
+        overview: "A.R.I.S.E. is a fully offline, modular AI system engineered to explore multi-model cognitive architectures under real-world consumer hardware constraints. Built using llama-cpp with CUDA offloading and persistent vector memory without external cloud dependencies.\n\nThe architecture implements a split-brain routing system that dynamically switches between specialized quantized models for conversational and algorithmic tasks, prioritizing architectural intelligence over brute-force monolithic scaling.",
+        tech: ["Python", "llama-cpp (CUDA Offloading)", "Llama 3.2 (3B GGUF)", "Qwen 2.5 Coder (1.5B GGUF)", "Local Vector Store", "NumPy", "CLI Runtime"],
         buttons: [
-            { label: "View GitHub →", url: "https://github.com/IshaanYK/Gmail-AI-Automation", type: "github" },
-            { label: "View LinkedIn →", url: "https://www.linkedin.com/posts/ishaan784_i-was-tired-of-my-inbox-being-90-noise-and-activity-7410561550899609600-oaBe", type: "external" }
+            { label: "View LinkedIn Breakdown →", url: "https://www.linkedin.com/pulse/de-clouding-intelligence-why-i-built-modular-biological-ishaan-sen-ufstf", type: "external" },
+            { label: "View GitHub Repository →", url: "https://github.com/IshaanYK/A.R.I.S.E-v1", type: "github" },
+            { label: "View Architecture Document →", url: "/#arise-architecture", type: "internal" }
+        ],
+        accent: "border-electric-blue",
+        textAccent: "text-electric-blue"
+    },
+    {
+        title: "TeamUnderdawgs Agrisense / AgroVani",
+        subtitle: "Multilingual Agricultural Crop Decision Support Engine",
+        category: "Agricultural ML",
+        overview: "Crop decision support and disease identification system engineered for Indian farmers. Integrates multimodal input across voice notes, leaf imagery, and WhatsApp bots in 5 Indian languages.\n\nBacked by a 4-model machine learning pipeline for climate stress modeling, crop suitability classification, and localized advisory recommendations.",
+        tech: ["Python", "FastAPI", "PyTorch", "Computer Vision", "WhatsApp Cloud API", "Multilingual NLP", "Climate Risk Scoring"],
+        buttons: [
+            { label: "View Core Engine Repo →", url: "https://github.com/IshaanYK/krishyantra-core-engine", type: "github" },
+            { label: "View Agrisense Repo →", url: "https://github.com/IshaanYK/TeamUnderdawgs-Agrisense", type: "github" }
+        ],
+        accent: "border-neon-violet",
+        textAccent: "text-neon-violet"
+    },
+    {
+        title: "Prompt Optimizer Extension",
+        subtitle: "Chrome Side Panel Prompt Structuring & Token Budgeting Engine",
+        category: "Developer Tools",
+        overview: "A high-performance Chrome Side Panel extension engineered to refine, compress, and structure prompts in real-time. Employs prompt taxonomy frameworks, eliminates token waste, and structures user prompts for maximum reasoning output fidelity.",
+        tech: ["React 19", "Vite", "Tailwind CSS", "Chrome Extensions Manifest v3", "TypeScript", "Token Optimization"],
+        buttons: [
+            { label: "View Chrome Extension Repo →", url: "https://github.com/IshaanYK/prompt-optimizer-extension", type: "github" },
+            { label: "View Source Codebase →", url: "https://github.com/IshaanYK/prompt-optimizer-source", type: "github" }
+        ],
+        accent: "border-electric-blue",
+        textAccent: "text-electric-blue"
+    },
+    {
+        title: "MindMate",
+        subtitle: "AI-Powered Mental Health & Emotional Analytics Companion",
+        category: "HealthTech AI",
+        overview: "MindMate is an AI-driven mental wellness platform combining conversational intelligence, mood analytics, and automated wellness reporting. Built during the Version Beta 8.0 Hackathon (Winner).\n\nIntegrates structured emotional pattern analysis, automated journaling, and a trusted-contact alert mechanism within a privacy-first modular backend.",
+        tech: ["React", "HTML5", "CSS3", "JavaScript", "Flask", "Node.js", "Firebase", "Gemini API", "Framer Motion"],
+        buttons: [
+            { label: "View GitHub Repository →", url: "https://github.com/IshaanYK/MindMate", type: "github" },
+            { label: "View Hackathon Post →", url: "https://www.linkedin.com/posts/ishaan784_hackathon-versionbeta8-iste-activity-7390999195169722369-56HA", type: "external" }
+        ],
+        accent: "border-neon-violet",
+        textAccent: "text-neon-violet"
+    },
+    {
+        title: "Neural Defender",
+        subtitle: "60fps HTML5 Canvas Cyberpunk Arcade Game & Physics Engine",
+        category: "Graphics & Interactive",
+        overview: "A high-performance cyberpunk browser arcade game built from scratch without external game engines. Features locked 60fps frame budgeting, 2D particle simulation physics, spatial collision algorithms, and real-time Web Audio API sound synthesizers.",
+        tech: ["HTML5 Canvas", "JavaScript (ES6+)", "Web Audio API", "Particle Physics", "Game Loop Architecture"],
+        buttons: [
+            { label: "Play Live in Browser →", url: "https://ishaanyk.github.io/IshaanYK/game/", type: "external" },
+            { label: "View Source Code →", url: "https://github.com/IshaanYK/IshaanYK/tree/main/game", type: "github" }
+        ],
+        accent: "border-electric-blue",
+        textAccent: "text-electric-blue"
+    },
+    {
+        title: "Desktop Storage Telemetry Daemon",
+        subtitle: "High-Performance Windows System Telemetry & Disk Widget",
+        category: "Systems & Utilities",
+        overview: "A lightweight Windows desktop telemetry daemon for real-time drive monitoring, visual disk usage analytics, automated threshold alerts, and rule-based cleanup.\n\nBuilt with zero-overhead background polling and native OS system metric instrumentation.",
+        tech: ["Python", "Windows API", "System Telemetry", "Performance Profiling", "Multithreading"],
+        buttons: [
+            { label: "View GitHub Repository →", url: "https://github.com/IshaanYK/desktop-storage-widget", type: "github" }
         ],
         accent: "border-neon-violet",
         textAccent: "text-neon-violet"
     },
     {
         title: "File Organizer Automation",
-        subtitle: "AI-Driven File Management & Backup System",
-        overview: "An intelligent file automation system that categorizes files, removes duplicates, performs scheduled cleanup, and synchronizes backups to cloud storage. Designed for scalable folder environments with optimized multi-threaded processing.",
+        subtitle: "AI-Driven File Management & Deduplication System",
+        category: "Automation Systems",
+        overview: "An intelligent file automation system that categorizes files, detects and removes duplicates, performs scheduled cleanups, and synchronizes backups to cloud storage. Designed for scalable folder environments with optimized multi-threaded processing.",
         tech: ["Python", "Filetype Library", "Google Drive API", "SMTP", "Multithreading", "Automation Scheduling"],
         buttons: [
-            { label: "View GitHub →", url: "https://github.com/IshaanYK/File-Organizer-Automation", type: "github" }
+            { label: "View GitHub Repository →", url: "https://github.com/IshaanYK/file-organizer-automation", type: "github" }
         ],
         accent: "border-electric-blue",
         textAccent: "text-electric-blue"
-    },
-    {
-        title: "Web Development Projects",
-        subtitle: "Frontend & Full-Stack Website Development Portfolio",
-        overview: "A collection of responsive websites built for hackathons, freelance clients, personal branding, and experimental frontend systems. Focused on structured component architecture, deployment practices, and clean responsive UI systems.",
-        tech: ["HTML", "CSS", "JavaScript", "React", "Modern Frontend Tooling", "Responsive Design"],
-        buttons: [
-            { label: "Macky Society – Innovate AI Challenge →", url: "https://github.com/IshaanYK/WEBSITE-MACKY_SOCITY-Innovate-AI-Challenge", type: "github" },
-            { label: "Dhruv Portfolio →", url: "https://github.com/IshaanYK/PORTFOLIO-Dhruv", type: "github" },
-            { label: "Frontend Project 3 →", url: "https://github.com/IshaanYK/frontend-project-3", type: "github" },
-            { label: "Frontend Project 2 →", url: "https://github.com/IshaanYK/Frontend-project-2", type: "github" },
-            { label: "Frontend Project 1 →", url: "https://github.com/IshaanYK/frontend-project-1", type: "github" }
-        ],
-        accent: "border-neon-violet",
-        textAccent: "text-neon-violet"
     }
 ];
 
@@ -104,6 +157,13 @@ export default function Projects() {
                             key={index}
                             className={`glass rounded-2xl p-8 md:p-12 border-l-4 ${item.accent} transition-transform duration-500 hover:bg-white/[0.02] flex flex-col items-start text-left`}
                         >
+                            {item.category && (
+                                <div className="mb-3">
+                                    <span className={`text-[10px] px-2.5 py-0.5 rounded-full font-mono uppercase tracking-wider border ${item.accent} ${item.textAccent} bg-white/5`}>
+                                        {item.category}
+                                    </span>
+                                </div>
+                            )}
                             <h2 className="text-2xl md:text-3xl font-bold text-white mb-2">{item.title}</h2>
                             <h3 className={`text-sm md:text-base font-semibold uppercase tracking-widest ${item.textAccent} mb-8`}>
                                 {item.subtitle}
