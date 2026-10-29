@@ -1,215 +1,195 @@
 import { motion } from 'framer-motion';
 import PageTransition from '../components/PageTransition';
-import { ExternalLink, Github, FileText, LayoutTemplate, Link as LinkIcon } from 'lucide-react';
+import { ExternalLink, Github, FileText, Layers, Radio, Activity, Cpu } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const projects = [
     {
-        title: "Voice Call Agent",
-        subtitle: "Real-Time Autonomous Voice AI Platform",
-        category: "Voice AI & Agents",
-        overview: "An autonomous AI-powered voice agent configured to receive, parse, and converse via live phone and browser calls with sub-second STT/TTS latency.\n\nArchitected with bi-directional audio streaming over WebSockets, autonomous tool-calling loops, and dynamic context parsing to manage interruption handling, intent routing, and real-time database queries during live dialogue.",
-        tech: ["JavaScript", "Node.js", "FastAPI", "WebSockets", "Whisper STT", "TTS Engines", "Speech API", "Autonomous Tool Loops"],
+        id: "arise",
+        title: "A.R.I.S.E.",
+        subtitle: "Artificial Responsive Intelligent System Environment",
+        badge: "Flagship Core System",
+        category: "Local LLM & Multi-Model Engine",
+        overview: "A.R.I.S.E. is a fully local, modular AI assistant powered by a split-brain multi-model architecture for efficient offline intelligence. The architecture executes entirely on consumer-grade hardware with NVIDIA CUDA offloading and persistent SQLite vector memory, dynamically routing prompts between specialized quantized models for code generation, conversational nuance, and deterministic tool actions without cloud dependency.",
+        tech: ["NVIDIA CUDA", "SQLite", "llama-cpp-python", "GGUF Quantization", "Llama 3.2 3B", "Qwen 2.5 Coder", "Local Vector Store"],
         buttons: [
-            { label: "View GitHub Repository →", url: "https://github.com/IshaanYK/voice-call-agent", type: "github" },
-            { label: "View Architecture →", url: "/#arise-architecture", type: "internal" }
+            { label: "Architecture Breakdown →", url: "https://www.linkedin.com/pulse/de-clouding-intelligence-why-i-built-modular-biological-ishaan-sen-ufstf", type: "external" },
+            { label: "GitHub Repository →", url: "https://github.com/IshaanYK/A.R.I.S.E-v1", type: "github" },
+            { label: "View Architecture Doc →", url: "/#arise-architecture", type: "internal" }
         ],
-        accent: "border-electric-blue",
-        textAccent: "text-electric-blue"
+        accent: "border-white/20",
+        highlight: true
     },
     {
-        title: "Gemini Local Agent",
-        subtitle: "Deep Reasoning Local Coding Agent & Tool Orchestrator",
-        category: "Autonomous Systems",
-        overview: "An autonomous software engineering and task execution agent powered by deep reasoning loops with zero cloud subscription dependency.\n\nFeatures persistent local vector memory, AST-based code parsing, full file-system inspection, self-healing terminal test execution, and dynamic tool orchestration capable of building and verifying multi-file projects.",
-        tech: ["Python", "Gemini API", "Local Vector Store", "AST Parser", "Tool-Use Loops", "CLI Runtime", "Self-Correction Engine"],
+        id: "politag",
+        title: "PoliTag MVP",
+        subtitle: "AI Political Debate & Social Ecosystem",
+        badge: "Social AI Architecture",
+        category: "Full-Stack AI & Civics",
+        overview: "Designed a social architecture targeting political polarization and lack of civic engagement tools for young adults. Built with Next.js, real-time Speech-To-Text processing, and Supabase data structures to parse ideological stances, foster structured discourse, and provide verifiable context on contested public policies.",
+        tech: ["Next.js", "React", "Speech-To-Text", "Supabase", "Tailwind CSS", "Semantic Embeddings"],
         buttons: [
-            { label: "View GitHub Repository →", url: "https://github.com/IshaanYK/gemini-1b-local-agent", type: "github" }
+            { label: "View Live Showcase →", url: "https://github.com/IshaanYK", type: "external" },
+            { label: "GitHub →", url: "https://github.com/IshaanYK", type: "github" }
         ],
-        accent: "border-neon-violet",
-        textAccent: "text-neon-violet"
+        accent: "border-white/10"
     },
     {
-        title: "AI Work OS OpenEnv",
-        subtitle: "Multi-Agent Workplace Simulation & RL Benchmark",
-        category: "Multi-Agent AI",
-        overview: "An advanced production-grade workplace simulation environment where autonomous AI agents collaborate, negotiate, and execute complex business operations under reward-driven reinforcement learning hooks.\n\nFeatures containerized multi-agent execution, asynchronous task dispatching, live REST endpoints, and automated benchmark scoring.",
-        tech: ["Python", "PyTorch", "OpenEnv", "FastAPI", "Docker", "Multi-Agent Workflows", "RL Evaluation"],
+        id: "callagent",
+        title: "CallAgent",
+        subtitle: "Autonomous Voice Outreach Engine with Multilingual Rendering",
+        badge: "Voice AI & Automation",
+        category: "Distributed Voice Pipeline",
+        overview: "Engineered an autonomous voice dialer capable of dynamically reading client script sheets, evaluating conversational branching, and synthesizing lifelike spoken audio through ElevenLabs multilingual neural voice rendering. Integrated Twilio telephony WebSockets with local CDN caching for sub-second response times.",
+        tech: ["Twilio Telephony", "ElevenLabs Neural TTS", "CDN Cache", "Python", "FastAPI", "AsyncIO"],
         buttons: [
-            { label: "View GitHub Repository →", url: "https://github.com/IshaanYK/ai-work-os-openenv", type: "github" }
+            { label: "GitHub Pipeline →", url: "https://github.com/IshaanYK", type: "github" }
         ],
-        accent: "border-electric-blue",
-        textAccent: "text-electric-blue"
+        accent: "border-white/10"
     },
     {
-        title: "A.R.I.S.E. (v1.2)",
-        subtitle: "Artificial Responsive Intelligent System Engine",
-        category: "Cognitive Architectures",
-        overview: "A.R.I.S.E. is a fully offline, modular AI system engineered to explore multi-model cognitive architectures under real-world consumer hardware constraints. Built using llama-cpp with CUDA offloading and persistent vector memory without external cloud dependencies.\n\nThe architecture implements a split-brain routing system that dynamically switches between specialized quantized models for conversational and algorithmic tasks, prioritizing architectural intelligence over brute-force monolithic scaling.",
-        tech: ["Python", "llama-cpp (CUDA Offloading)", "Llama 3.2 (3B GGUF)", "Qwen 2.5 Coder (1.5B GGUF)", "Local Vector Store", "NumPy", "CLI Runtime"],
+        id: "storage-widget",
+        title: "Storage Widget",
+        subtitle: "Non-Blocking Windows Desktop Application",
+        badge: "Systems & Utilities",
+        category: "Desktop Software Engine",
+        overview: "Coded a lightweight Tkinter dark-theme overlay that monitors connected system partition flags, read/write I/O operations, and disk thresholds in real time. Built with decoupled daemon threads preventing UI freezes during high-throughput sector checks on Windows API subsystems.",
+        tech: ["Python", "Tkinter", "psutil", "Multithreading", "Windows API"],
         buttons: [
-            { label: "View LinkedIn Breakdown →", url: "https://www.linkedin.com/pulse/de-clouding-intelligence-why-i-built-modular-biological-ishaan-sen-ufstf", type: "external" },
-            { label: "View GitHub Repository →", url: "https://github.com/IshaanYK/A.R.I.S.E-v1", type: "github" },
-            { label: "View Architecture Document →", url: "/#arise-architecture", type: "internal" }
+            { label: "View Widget Code →", url: "https://github.com/IshaanYK", type: "github" }
         ],
-        accent: "border-electric-blue",
-        textAccent: "text-electric-blue"
+        accent: "border-white/10"
     },
     {
-        title: "TeamUnderdawgs Agrisense / AgroVani",
-        subtitle: "Multilingual Agricultural Crop Decision Support Engine",
-        category: "Agricultural ML",
-        overview: "Crop decision support and disease identification system engineered for Indian farmers. Integrates multimodal input across voice notes, leaf imagery, and WhatsApp bots in 5 Indian languages.\n\nBacked by a 4-model machine learning pipeline for climate stress modeling, crop suitability classification, and localized advisory recommendations.",
-        tech: ["Python", "FastAPI", "PyTorch", "Computer Vision", "WhatsApp Cloud API", "Multilingual NLP", "Climate Risk Scoring"],
-        buttons: [
-            { label: "View Core Engine Repo →", url: "https://github.com/IshaanYK/krishyantra-core-engine", type: "github" },
-            { label: "View Agrisense Repo →", url: "https://github.com/IshaanYK/TeamUnderdawgs-Agrisense", type: "github" }
-        ],
-        accent: "border-neon-violet",
-        textAccent: "text-neon-violet"
-    },
-    {
-        title: "Prompt Optimizer Extension",
-        subtitle: "Chrome Side Panel Prompt Structuring & Token Budgeting Engine",
-        category: "Developer Tools",
-        overview: "A high-performance Chrome Side Panel extension engineered to refine, compress, and structure prompts in real-time. Employs prompt taxonomy frameworks, eliminates token waste, and structures user prompts for maximum reasoning output fidelity.",
-        tech: ["React 19", "Vite", "Tailwind CSS", "Chrome Extensions Manifest v3", "TypeScript", "Token Optimization"],
-        buttons: [
-            { label: "View Chrome Extension Repo →", url: "https://github.com/IshaanYK/prompt-optimizer-extension", type: "github" },
-            { label: "View Source Codebase →", url: "https://github.com/IshaanYK/prompt-optimizer-source", type: "github" }
-        ],
-        accent: "border-electric-blue",
-        textAccent: "text-electric-blue"
-    },
-    {
+        id: "mindmate",
         title: "MindMate",
-        subtitle: "AI-Powered Mental Health & Emotional Analytics Companion",
-        category: "HealthTech AI",
-        overview: "MindMate is an AI-driven mental wellness platform combining conversational intelligence, mood analytics, and automated wellness reporting. Built during the Version Beta 8.0 Hackathon (Winner).\n\nIntegrates structured emotional pattern analysis, automated journaling, and a trusted-contact alert mechanism within a privacy-first modular backend.",
-        tech: ["React", "HTML5", "CSS3", "JavaScript", "Flask", "Node.js", "Firebase", "Gemini API", "Framer Motion"],
+        subtitle: "AI-Powered Mental Health Companion",
+        badge: "Hackathon 36-Hr Sprint",
+        category: "Conversational Intelligence",
+        overview: "MindMate is an AI-driven mental wellness platform combining conversational intelligence, mood analytics, and automated wellness reporting. Built in 36 hours for Version Beta 8.0, integrating emotional pattern analysis and a trusted-contact alert mechanism within a privacy-conscious architecture.",
+        tech: ["React", "Flask", "Node.js", "Firebase", "Gemini API", "Framer Motion"],
         buttons: [
-            { label: "View GitHub Repository →", url: "https://github.com/IshaanYK/MindMate", type: "github" },
-            { label: "View Hackathon Post →", url: "https://www.linkedin.com/posts/ishaan784_hackathon-versionbeta8-iste-activity-7390999195169722369-56HA", type: "external" }
+            { label: "GitHub Repository →", url: "https://github.com/IshaanYK/MindMate", type: "github" },
+            { label: "Hackathon Breakdown →", url: "https://www.linkedin.com/posts/ishaan784_hackathon-versionbeta8-iste-activity-7390999195169722369-56HA", type: "external" }
         ],
-        accent: "border-neon-violet",
-        textAccent: "text-neon-violet"
+        accent: "border-white/10"
     },
     {
-        title: "Neural Defender",
-        subtitle: "60fps HTML5 Canvas Cyberpunk Arcade Game & Physics Engine",
-        category: "Graphics & Interactive",
-        overview: "A high-performance cyberpunk browser arcade game built from scratch without external game engines. Features locked 60fps frame budgeting, 2D particle simulation physics, spatial collision algorithms, and real-time Web Audio API sound synthesizers.",
-        tech: ["HTML5 Canvas", "JavaScript (ES6+)", "Web Audio API", "Particle Physics", "Game Loop Architecture"],
+        id: "geospatial-ai",
+        title: "Geospatial AI Automator",
+        subtitle: "Chain-of-Thought Spatial Intelligence System",
+        badge: "ISRO Space Tech Challenge",
+        category: "GIS & Deep Learning",
+        overview: "A Chain-of-Thought–based AI system designed to automate complex geospatial workflows through intelligent tool orchestration. Reasons step-by-step like a GIS analyst to dynamically execute spatial operations such as flood-risk mapping, land-use classification, and satellite raster queries.",
+        tech: ["Python", "FastAPI", "LangChain", "QGIS", "GDAL", "TensorFlow", "ISRO Bhuvan / Sentinel"],
         buttons: [
-            { label: "Play Live in Browser →", url: "https://ishaanyk.github.io/IshaanYK/game/", type: "external" },
-            { label: "View Source Code →", url: "https://github.com/IshaanYK/IshaanYK/tree/main/game", type: "github" }
+            { label: "ISRO Project Overview →", url: "https://www.linkedin.com/posts/ishaan784_isro-hackathon-innovation-activity-7374681405185970176-nVC8", type: "external" }
         ],
-        accent: "border-electric-blue",
-        textAccent: "text-electric-blue"
-    },
-    {
-        title: "Desktop Storage Telemetry Daemon",
-        subtitle: "High-Performance Windows System Telemetry & Disk Widget",
-        category: "Systems & Utilities",
-        overview: "A lightweight Windows desktop telemetry daemon for real-time drive monitoring, visual disk usage analytics, automated threshold alerts, and rule-based cleanup.\n\nBuilt with zero-overhead background polling and native OS system metric instrumentation.",
-        tech: ["Python", "Windows API", "System Telemetry", "Performance Profiling", "Multithreading"],
-        buttons: [
-            { label: "View GitHub Repository →", url: "https://github.com/IshaanYK/desktop-storage-widget", type: "github" }
-        ],
-        accent: "border-neon-violet",
-        textAccent: "text-neon-violet"
-    },
-    {
-        title: "File Organizer Automation",
-        subtitle: "AI-Driven File Management & Deduplication System",
-        category: "Automation Systems",
-        overview: "An intelligent file automation system that categorizes files, detects and removes duplicates, performs scheduled cleanups, and synchronizes backups to cloud storage. Designed for scalable folder environments with optimized multi-threaded processing.",
-        tech: ["Python", "Filetype Library", "Google Drive API", "SMTP", "Multithreading", "Automation Scheduling"],
-        buttons: [
-            { label: "View GitHub Repository →", url: "https://github.com/IshaanYK/file-organizer-automation", type: "github" }
-        ],
-        accent: "border-electric-blue",
-        textAccent: "text-electric-blue"
+        accent: "border-white/10"
     }
 ];
 
 export default function Projects() {
     return (
         <PageTransition>
-            <div className="w-full max-w-5xl mx-auto pb-24">
+            <div className="w-full max-w-6xl mx-auto pb-28 px-4 sm:px-6">
+
                 {/* SECTION HEADER */}
-                <div className="mb-20 text-center flex flex-col items-center">
-                    <h1 className="text-3xl md:text-5xl font-bold mb-6">
-                        Engineered Systems <span className="text-gradient block mt-2 md:inline md:mt-0">&</span> Intelligent Architectures
+                <div className="mb-16 text-center flex flex-col items-center">
+                    <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs font-mono text-gray-300 mb-4 tracking-wider uppercase">
+                        <Cpu size={14} className="text-white" />
+                        Software & Hardware Pipelines
+                    </div>
+                    <h1 className="text-3xl md:text-5xl font-bold mb-4 tracking-tight text-white font-sans">
+                        Engineered Systems <span className="text-gradient">&</span> AI Architectures
                     </h1>
-                    <p className="text-gray-400 text-sm md:text-lg max-w-2xl font-light tracking-wide leading-relaxed">
-                        A curated collection of autonomous agents, AI orchestration frameworks, and research-driven system designs.
+                    <p className="text-gray-400 text-sm md:text-base max-w-2xl font-light tracking-wide leading-relaxed">
+                        Autonomous split-brain agents, real-time voice pipelines, desktop utilities, and deep learning engines designed for deterministic execution.
                     </p>
                 </div>
 
                 {/* PROJECTS LIST */}
-                <div className="flex flex-col gap-16 w-full">
+                <div className="flex flex-col gap-10 w-full">
                     {projects.map((item, index) => (
                         <motion.div
-                            initial={{ opacity: 0, y: 30 }}
+                            key={item.id}
+                            initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true, margin: "-100px" }}
-                            key={index}
-                            className={`glass rounded-2xl p-8 md:p-12 border-l-4 ${item.accent} transition-transform duration-500 hover:bg-white/[0.02] flex flex-col items-start text-left`}
+                            viewport={{ once: true, margin: "-50px" }}
+                            transition={{ duration: 0.5, delay: index * 0.08 }}
+                            className={`glass p-6 md:p-10 rounded-2xl border transition-all duration-300 ${
+                                item.highlight
+                                    ? 'border-white/20 bg-gradient-to-b from-white/[0.04] to-transparent shadow-[0_0_40px_rgba(255,255,255,0.04)]'
+                                    : 'border-white/5 hover:border-white/20'
+                            }`}
                         >
-                            {item.category && (
-                                <div className="mb-3">
-                                    <span className={`text-[10px] px-2.5 py-0.5 rounded-full font-mono uppercase tracking-wider border ${item.accent} ${item.textAccent} bg-white/5`}>
+                            <div className="flex flex-col md:flex-row md:items-center justify-between gap-3 mb-4">
+                                <div className="flex flex-wrap items-center gap-2.5">
+                                    <span className="px-2.5 py-0.5 rounded-full text-[10px] font-mono uppercase tracking-wider bg-white/10 text-white border border-white/15">
+                                        {item.badge}
+                                    </span>
+                                    <span className="text-xs text-gray-400 font-mono">
                                         {item.category}
                                     </span>
                                 </div>
-                            )}
-                            <h2 className="text-2xl md:text-3xl font-bold text-white mb-2">{item.title}</h2>
-                            <h3 className={`text-sm md:text-base font-semibold uppercase tracking-widest ${item.textAccent} mb-8`}>
-                                {item.subtitle}
-                            </h3>
-
-                            <div className="text-gray-300 font-light leading-relaxed mb-10 w-full max-w-3xl">
-                                {item.overview.split('\n\n').map((paragraph, i) => (
-                                    <p key={i} className="mb-4 last:mb-0">
-                                        {paragraph}
-                                    </p>
-                                ))}
                             </div>
 
-                            <div className="w-full mb-10">
-                                <h4 className="text-xs uppercase tracking-widest text-gray-500 font-bold mb-4">Tech Stack</h4>
+                            <h2 className="text-2xl md:text-3xl font-bold text-white mb-1.5 tracking-tight">
+                                {item.title}
+                            </h2>
+                            <p className="text-sm md:text-base text-gray-300 font-light mb-6">
+                                {item.subtitle}
+                            </p>
+
+                            <p className="text-gray-400 text-sm md:text-base font-light leading-relaxed mb-8 max-w-4xl whitespace-pre-line">
+                                {item.overview}
+                            </p>
+
+                            {/* Tech Stack Pills */}
+                            <div className="mb-8">
+                                <span className="text-[11px] font-mono uppercase tracking-widest text-gray-400 block mb-3">
+                                    Technologies & Stack
+                                </span>
                                 <div className="flex flex-wrap gap-2">
-                                    {item.tech.map((t, i) => (
-                                        <span key={i} className="px-3 py-1.5 text-[0.7rem] uppercase tracking-wider font-semibold rounded bg-white/5 border border-white/10 text-gray-300">
+                                    {item.tech.map((t, idx) => (
+                                        <span
+                                            key={idx}
+                                            className="px-3 py-1 rounded-md bg-white/[0.03] border border-white/10 text-xs font-mono text-gray-300"
+                                        >
                                             {t}
                                         </span>
                                     ))}
                                 </div>
                             </div>
 
-                            <div className="flex flex-wrap gap-4 mt-auto">
-                                {item.buttons.map((btn, i) => {
-                                    const baseStyles = `flex items-center text-xs md:text-sm font-semibold tracking-wide px-5 py-2.5 rounded-full border ${item.accent} hover:bg-white/5 transition-all duration-300 ${item.textAccent}`;
-
-                                    if (btn.type === 'internal') {
+                            {/* Action Buttons */}
+                            <div className="flex flex-wrap gap-3 pt-4 border-t border-white/5">
+                                {item.buttons.map((btn, idx) => {
+                                    if (btn.type === "internal") {
                                         return (
-                                            <Link key={i} to={btn.url} className={baseStyles}>
-                                                <FileText size={16} className="mr-2" />
+                                            <Link
+                                                key={idx}
+                                                to={btn.url}
+                                                className="px-4 py-2 rounded-xl bg-white/10 hover:bg-white/20 border border-white/15 text-white text-xs font-medium transition-all flex items-center gap-2"
+                                            >
+                                                <FileText size={14} />
                                                 {btn.label}
                                             </Link>
                                         );
                                     }
-
                                     return (
                                         <a
-                                            key={i}
+                                            key={idx}
                                             href={btn.url}
                                             target="_blank"
                                             rel="noopener noreferrer"
-                                            className={baseStyles}
+                                            className={`px-4 py-2 rounded-xl text-xs font-medium transition-all flex items-center gap-2 ${
+                                                btn.type === "github"
+                                                    ? 'bg-white/5 hover:bg-white/10 border border-white/10 text-gray-300 hover:text-white'
+                                                    : 'bg-white text-black hover:bg-gray-200 font-semibold shadow-[0_0_15px_rgba(255,255,255,0.15)]'
+                                            }`}
                                         >
-                                            {btn.type === 'github' ? <Github size={16} className="mr-2" /> : <ExternalLink size={16} className="mr-2" />}
+                                            {btn.type === "github" ? <Github size={14} /> : <ExternalLink size={14} />}
                                             {btn.label}
                                         </a>
                                     );
@@ -218,6 +198,7 @@ export default function Projects() {
                         </motion.div>
                     ))}
                 </div>
+
             </div>
         </PageTransition>
     );

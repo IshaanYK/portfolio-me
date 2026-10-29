@@ -1,130 +1,128 @@
 import PageTransition from '../components/PageTransition';
-import { Network, Microscope, Layers, BrainCircuit, Cpu, GitMerge, Rocket, GraduationCap } from 'lucide-react';
-import { socialPlatforms } from '../data/socialLinks';
-import SocialIcon from '../components/SocialIcon';
+import { Network, Microscope, Layers, BrainCircuit, Cpu, GitMerge, Rocket, Award, GraduationCap } from 'lucide-react';
+import { education } from '../data/portfolioData';
 
 export default function About() {
     return (
         <PageTransition>
-            <div className="max-w-5xl mx-auto w-full pb-20">
+            <div className="max-w-5xl mx-auto w-full pb-28 px-4 sm:px-6">
+
                 {/* 1. Identity & Core Focus */}
                 <div className="mb-20">
-                    <h1 className="text-4xl md:text-5xl font-bold mb-8 text-center md:text-left">
-                        <span className="text-gradient">About</span>
-                    </h1>
-                    <div className="glass p-8 md:p-12 rounded-2xl relative overflow-hidden text-left border border-white/5">
-                        <div className="absolute top-0 right-0 w-96 h-96 bg-electric-blue/5 rounded-full blur-[100px] -mr-20 -mt-20 pointer-events-none" />
-
-                        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs font-mono text-electric-blue uppercase tracking-widest mb-4 relative z-10">
-                            <GraduationCap size={14} /> Indian Institute of Technology Madras (IIT Madras)
+                    <div className="mb-12 text-center md:text-left">
+                        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs font-mono text-gray-300 mb-3 tracking-wider uppercase">
+                            Systems Engineer & AI Specialist
                         </div>
+                        <h1 className="text-4xl md:text-5xl font-bold tracking-tight text-white font-sans">
+                            About <span className="text-gradient">Ishaan Sen</span>
+                        </h1>
+                    </div>
 
-                        <h2 className="text-2xl font-bold mb-6 text-white relative z-10">
-                            Identity & Core Focus
+                    <div className="glass p-8 md:p-12 rounded-3xl relative overflow-hidden text-left border border-white/10">
+                        <div className="absolute top-0 right-0 w-96 h-96 bg-white/[0.02] rounded-full blur-[100px] -mr-20 -mt-20 pointer-events-none" />
+
+                        <h2 className="text-xl md:text-2xl font-bold mb-6 text-white relative z-10">
+                            Engineering Identity & Research Philosophy
                         </h2>
 
-                        <div className="space-y-6 text-lg text-gray-300 leading-relaxed relative z-10 font-light text-left">
+                        <div className="space-y-5 text-base md:text-lg text-gray-300 leading-relaxed relative z-10 font-light">
                             <p>
-                                I am an <strong className="text-white font-semibold">AI Systems Architect and Full-Stack Engineer</strong> at <strong className="text-white font-semibold">IIT Madras</strong>, dedicated to building autonomous multi-agent systems, real-time voice AI architectures, and low-latency intelligent software.
+                                I am a <strong className="text-white font-semibold">Software Engineer and AI & ML Specialist</strong> specializing in local LLM deployment, multi-agent cognitive frameworks, and robotics control systems.
                             </p>
                             <p>
-                                Rather than viewing AI solely through pre-trained wrappers, I focus on the holistic engineering of cognitive engines—combining autonomous reasoning loops, persistent vector memory, tool execution runtimes, and hardware-aware quantization for edge and consumer systems.
+                                Currently pursuing a <strong className="text-white font-medium">B.Tech in Computer Science & Engineering (AI & ML)</strong> at Technocrats Institute of Technology alongside a <strong className="text-white font-medium">B.Sc in Data Science and Applications at IIT Madras</strong>, my work bridges rigorous algorithmic theory with concrete systems engineering under real-world hardware constraints.
                             </p>
                             <p>
-                                My active work spans <strong className="text-electric-blue font-semibold">autonomous coding agents, real-time voice streaming over WebSockets, production RAG pipelines, and high-performance full-stack web platforms</strong> built on Next.js 15, FastAPI, and PyTorch.
+                                As <strong className="text-white font-medium">Technical Head at the AI Bioscience Lab (TIT IncubationCentre)</strong>, I lead workflows for high-throughput computational drug discovery. In competitive engineering, I ranked <strong className="text-white font-medium">5th globally</strong> in IIT Madras Compassion-A-Thon 3.0 out of 500+ teams and secured <strong className="text-white font-medium">11th place globally</strong> at Hack IIT Kanpur (C3iHub) out of 200 elite cryptography and threat hunting squads.
                             </p>
                         </div>
                     </div>
                 </div>
 
-                {/* 2. How I Think */}
+                {/* 2. Academic Roadmap */}
                 <div className="mb-20">
-                    <h2 className="text-xl md:text-2xl font-bold mb-8 flex items-center text-left">
-                        <Network className="mr-4 text-neon-violet" />
-                        Systems & Research Mindset
+                    <h2 className="text-xl md:text-2xl font-bold mb-8 flex items-center text-white">
+                        <GraduationCap className="mr-3 text-white" size={24} />
+                        Dual Academic Foundation
+                    </h2>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        {education.slice(0, 2).map((edu, idx) => (
+                            <div key={idx} className="glass p-6 md:p-8 rounded-2xl border border-white/10 hover:border-white/20 transition-all">
+                                <span className="text-xs font-mono text-gray-400 block mb-1">{edu.period}</span>
+                                <h3 className="text-lg font-bold text-white mb-1">{edu.institution}</h3>
+                                <p className="text-sm font-medium text-gray-300 mb-2">{edu.degree}</p>
+                                <p className="text-xs text-gray-400 mb-4">{edu.location} • <strong className="text-white">{edu.score}</strong></p>
+                                <ul className="space-y-1.5 border-t border-white/5 pt-3">
+                                    {edu.highlights.map((h, i) => (
+                                        <li key={i} className="text-xs text-gray-400 font-light flex items-start">
+                                            <span className="text-white/40 mr-2 mt-0.5">■</span>
+                                            <span>{h}</span>
+                                        </li>
+                                    ))}
+                                </ul>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+
+                {/* 3. How I Think */}
+                <div className="mb-20">
+                    <h2 className="text-xl md:text-2xl font-bold mb-8 flex items-center text-white">
+                        <Network className="mr-3 text-white" size={24} />
+                        Architectural Principles
                     </h2>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-left">
-                        <div className="glass p-8 rounded-xl border-l-2 border-electric-blue hover:bg-white/[0.02] transition-colors border-y border-r border-white/5">
-                            <h3 className="text-xl font-bold text-white mb-4">Structural Thinking</h3>
-                            <p className="text-gray-400 leading-relaxed font-light">
-                                Execution follows design. I prioritize deep structural thinking before writing code, breaking down complex system architectures into manageable, evaluable components and rigorously assessing technological feasibility.
+                        <div className="glass p-8 rounded-2xl border border-white/10 hover:border-white/20 transition-all">
+                            <h3 className="text-lg font-bold text-white mb-3">Deterministic Architecture Over Monolithic Scale</h3>
+                            <p className="text-gray-400 leading-relaxed font-light text-sm md:text-base">
+                                Scaling parameters indiscriminately often masks underlying structural inefficiencies. I design split-brain multi-model architectures that dynamically allocate tasks to compact, specialized quantized SLMs with deterministic tools and local vector memory.
                             </p>
                         </div>
-                        <div className="glass p-8 rounded-xl border-l-2 border-neon-violet hover:bg-white/[0.02] transition-colors border-y border-r border-white/5">
-                            <h3 className="text-xl font-bold text-white mb-4">The Development Loop</h3>
-                            <p className="text-gray-400 leading-relaxed font-light">
-                                My approach follows a strict, repeatable pipeline: research <span className="text-electric-blue mx-2 font-bold">→</span> experimentation <span className="text-electric-blue mx-2 font-bold">→</span> refinement <span className="text-electric-blue mx-2 font-bold">→</span> deployment. I focus on designing modular intelligence pipelines that ensure clean reasoning flow and maintainable system integration.
+                        <div className="glass p-8 rounded-2xl border border-white/10 hover:border-white/20 transition-all">
+                            <h3 className="text-lg font-bold text-white mb-3">Hardware-Aware Engineering</h3>
+                            <p className="text-gray-400 leading-relaxed font-light text-sm md:text-base">
+                                From low-level C firmware and PID attitude loops on microcontrollers to CUDA layer offloading and VRAM budget tuning, software should respect and leverage the physical constraints of the execution environment.
                             </p>
                         </div>
                     </div>
                 </div>
 
-                {/* 3. Technical Direction */}
+                {/* 4. Technical Vectors */}
                 <div className="mb-20">
-                    <h2 className="text-xl md:text-2xl font-bold mb-8 flex items-center text-left">
-                        <Microscope className="mr-4 text-electric-blue" />
-                        Technical Direction & Current Exploration
+                    <h2 className="text-xl md:text-2xl font-bold mb-8 flex items-center text-white">
+                        <Microscope className="mr-3 text-white" size={24} />
+                        Current Technical Focus
                     </h2>
-                    <div className="glass p-8 md:p-10 rounded-2xl text-left border border-white/5">
-                        <p className="text-gray-300 md:text-lg mb-10 font-light leading-relaxed">
-                            My goal is to construct and improve fundamental AI systems, moving beyond simply utilizing pre-trained APIs toward orchestrating unified intelligent engines. My current research and development focus includes:
-                        </p>
-                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                            {[
-                                { title: 'Transformer Architectures', desc: 'Exploration of attention mechanisms and internal model representations.', icon: <Layers size={22} /> },
-                                { title: 'Multimodal AI', desc: 'Engineering systems that process and reason across text, vision, and sensory data.', icon: <BrainCircuit size={22} /> },
-                                { title: 'Robotics Integration', desc: 'Embedding lightweight, responsive AI intelligence into physical autonomous platforms.', icon: <Cpu size={22} /> },
-                                { title: 'Model Orchestration', desc: 'Developing frameworks to combine specialized AI subsystems into cohesive engines.', icon: <GitMerge size={22} /> },
-                            ].map((item, idx) => (
-                                <div key={idx} className="flex gap-4 p-5 rounded-lg bg-white/[0.02] border border-white/5 hover:border-white/10 transition-colors">
-                                    <div className="text-electric-blue shrink-0 mt-0.5">{item.icon}</div>
-                                    <div>
-                                        <h4 className="text-white font-bold mb-2">{item.title}</h4>
-                                        <p className="text-sm md:text-base text-gray-400 leading-relaxed font-light">{item.desc}</p>
-                                    </div>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                        {[
+                            { title: 'Offline Quantized SLMs', desc: 'llama-cpp execution, GGUF compression, and multi-model routing without external cloud dependencies.', icon: <Layers size={20} /> },
+                            { title: 'Autonomous Robotics', desc: 'Pixhawk microcontrollers, real-time PID attitude tuning, and dual-processor split-brain servo controls.', icon: <Cpu size={20} /> },
+                            { title: 'Drug Discovery Workflows', desc: 'Accelerated cheminformatics and deep learning pipelines at AI Bioscience Lab.', icon: <BrainCircuit size={20} /> },
+                            { title: 'High-Concurrency Systems', desc: 'Non-blocking multi-threaded sector scanning, asynchronous microservices, and audio streaming.', icon: <GitMerge size={20} /> },
+                        ].map((item, idx) => (
+                            <div key={idx} className="flex gap-4 p-5 rounded-2xl glass border border-white/10 hover:border-white/20 transition-all">
+                                <div className="text-white shrink-0 mt-1">{item.icon}</div>
+                                <div>
+                                    <h3 className="text-white font-bold text-sm mb-1.5">{item.title}</h3>
+                                    <p className="text-xs text-gray-400 leading-relaxed font-light">{item.desc}</p>
                                 </div>
-                            ))}
-                        </div>
-                    </div>
-                </div>
-
-                {/* 4. Direction & Growth */}
-                <div>
-                    <div className="glass p-8 md:p-10 rounded-2xl flex flex-col md:flex-row items-center justify-between gap-8 border border-white/10 relative overflow-hidden text-center md:text-left">
-                        <div className="absolute inset-0 bg-gradient-to-br from-neon-violet/10 to-transparent pointer-events-none" />
-
-                        <div className="relative z-10 w-full max-w-2xl">
-                            <h2 className="text-xl md:text-2xl font-bold mb-4 text-white">Direction & Growth</h2>
-                            <p className="text-gray-400 leading-relaxed md:text-lg font-light">
-                                Ultimately, my trajectory is directed toward building comprehensive AI operating systems and contributing to advanced AI research. I am actively growing toward dedicated research engineering roles where pushing the boundaries of cognitive architectures is the primary objective.
-                            </p>
-                        </div>
-
-                        <div className="relative z-10 shrink-0 md:pl-4">
-                            <div className="w-20 h-20 rounded-full glass flex items-center justify-center border border-electric-blue/30 shadow-[0_0_30px_rgba(190,242,100,0.15)] mx-auto md:mx-0">
-                                <Rocket className="text-electric-blue" size={36} />
                             </div>
-                        </div>
+                        ))}
                     </div>
                 </div>
 
-                {/* 5. Connect Strip */}
-                <div className="mt-16 text-center">
-                    <p className="text-xs uppercase tracking-widest text-gray-500 font-bold mb-4">Connect Directly Across Platforms</p>
-                    <div className="flex flex-wrap justify-center gap-2.5">
-                        {socialPlatforms.map((p) => (
-                            <a
-                                key={p.id}
-                                href={p.url}
-                                target={p.id === 'email' ? '_self' : '_blank'}
-                                rel="noopener noreferrer"
-                                className="flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/[0.03] border border-white/10 hover:border-electric-blue/50 hover:bg-white/[0.08] text-gray-400 hover:text-white transition-all text-xs font-medium group"
-                                title={`${p.name}: ${p.handle}`}
-                            >
-                                <SocialIcon type={p.iconType} size={14} className="group-hover:scale-110 transition-transform" />
-                                <span>{p.name}</span>
-                            </a>
-                        ))}
+                {/* 5. Vision */}
+                <div className="glass p-8 md:p-10 rounded-3xl flex flex-col md:flex-row items-center justify-between gap-8 border border-white/10">
+                    <div className="w-full max-w-2xl text-center md:text-left">
+                        <h2 className="text-xl md:text-2xl font-bold mb-3 text-white">Trajectory & Future Engineering</h2>
+                        <p className="text-gray-400 leading-relaxed text-sm md:text-base font-light">
+                            My trajectory is focused on architecting production-grade AI operating engines and autonomous physical platforms. I actively seek research fellowships, engineering roles, and system-level collaborations that push the frontier of intelligent reasoning.
+                        </p>
+                    </div>
+                    <div className="shrink-0">
+                        <div className="w-16 h-16 rounded-2xl glass flex items-center justify-center border border-white/20 text-white shadow-[0_0_25px_rgba(255,255,255,0.1)]">
+                            <Rocket size={28} />
+                        </div>
                     </div>
                 </div>
 

@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import PageTransition from '../components/PageTransition';
-import { Send, MapPin, ExternalLink, Sparkles } from 'lucide-react';
+import { Mail, Send, MapPin, ExternalLink, Phone, MessageSquare, Globe } from 'lucide-react';
 import { socialPlatforms } from '../data/socialLinks';
 import SocialIcon from '../components/SocialIcon';
 
@@ -13,7 +13,6 @@ export default function Contact() {
         e.preventDefault();
         setIsSubmitting(true);
 
-        // Construct email body with user's info so Ishaan can reply
         const mailBody = `
 Name: ${formData.name}
 Email: ${formData.email}
@@ -25,10 +24,8 @@ ${formData.message}
 
         const mailtoLink = `mailto:ishaansenres@gmail.com?subject=${encodeURIComponent(formData.subject || `New Contact from ${formData.name}`)}&body=${encodeURIComponent(mailBody)}`;
 
-        // Open user's default email client
         window.location.href = mailtoLink;
 
-        // Reset form state visually
         setTimeout(() => {
             setIsSubmitting(false);
             setSubmitted(true);
@@ -43,80 +40,76 @@ ${formData.message}
 
     return (
         <PageTransition>
-            <div className="max-w-6xl mx-auto w-full pb-20 px-4 sm:px-6">
+            <div className="max-w-6xl mx-auto w-full pb-28 px-4 sm:px-6">
 
                 {/* SECTION HEADER */}
-                <div className="text-center mb-12 md:mb-16 flex flex-col items-center">
-                    <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs font-medium text-electric-blue uppercase tracking-widest mb-4">
-                        <Sparkles size={14} /> Connect & Collaborate
+                <div className="text-center mb-16 md:mb-20 flex flex-col items-center">
+                    <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs font-mono text-gray-300 mb-4 tracking-wider uppercase">
+                        <MessageSquare size={14} className="text-white" />
+                        Direct & Public Channels
                     </div>
-                    <h1 className="text-4xl md:text-5xl font-bold mb-4 tracking-tight font-serif text-white">
-                        Let’s Build Together
+                    <h1 className="text-3xl md:text-5xl font-bold mb-4 tracking-tight text-white font-sans">
+                        Let’s <span className="text-gradient">Connect</span>
                     </h1>
                     <p className="text-gray-400 text-sm md:text-base max-w-2xl font-light tracking-wide leading-relaxed">
-                        Open to research collaboration, autonomous AI system engineering, technical architecture discussions, and innovative ventures.
+                        Reach out for AI systems engineering, research fellowships, technical leadership, or algorithmic collaborations.
                     </p>
                 </div>
 
-                <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14">
+                {/* MAIN GRID */}
+                <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 mb-20">
 
-                    {/* SECTION 1 - DIRECT CONTACT & PLATFORMS */}
-                    <div className="lg:col-span-5 space-y-6 flex flex-col">
-                        <div className="flex items-center justify-between">
-                            <h2 className="text-xs uppercase tracking-widest text-gray-400 font-bold">Connect Across Platforms</h2>
-                            <span className="text-[11px] px-2 py-0.5 rounded bg-electric-blue/10 text-electric-blue border border-electric-blue/20">8 Active Channels</span>
+                    {/* DIRECT CONTACT CHANNELS */}
+                    <div className="lg:col-span-5 space-y-4 flex flex-col justify-center">
+                        <div className="p-5 glass rounded-2xl border border-white/10 space-y-3">
+                            <h2 className="text-xs font-mono uppercase tracking-widest text-gray-400 mb-2">Primary Direct Details</h2>
+                            
+                            <a href="mailto:ishaansenres@gmail.com" className="flex items-center gap-3 p-3 rounded-xl bg-white/[0.02] hover:bg-white/10 border border-white/5 transition-all group">
+                                <Mail size={18} className="text-white group-hover:scale-110 transition-transform" />
+                                <div className="flex-1">
+                                    <span className="block text-[10px] text-gray-400 uppercase font-mono">Email</span>
+                                    <span className="text-xs md:text-sm font-medium text-white">ishaansenres@gmail.com</span>
+                                </div>
+                                <ExternalLink size={13} className="text-gray-500 opacity-0 group-hover:opacity-100" />
+                            </a>
+
+                            <a href="tel:+917222949347" className="flex items-center gap-3 p-3 rounded-xl bg-white/[0.02] hover:bg-white/10 border border-white/5 transition-all group">
+                                <Phone size={18} className="text-white group-hover:scale-110 transition-transform" />
+                                <div className="flex-1">
+                                    <span className="block text-[10px] text-gray-400 uppercase font-mono">Phone / WhatsApp</span>
+                                    <span className="text-xs md:text-sm font-medium text-white">+91 7222949347</span>
+                                </div>
+                                <ExternalLink size={13} className="text-gray-500 opacity-0 group-hover:opacity-100" />
+                            </a>
+
+                            <div className="flex items-center gap-3 p-3 rounded-xl bg-white/[0.02] border border-white/5">
+                                <MapPin size={18} className="text-white" />
+                                <div>
+                                    <span className="block text-[10px] text-gray-400 uppercase font-mono">Base Location</span>
+                                    <span className="text-xs md:text-sm font-medium text-white">Bhopal, India</span>
+                                </div>
+                            </div>
                         </div>
 
-                        {/* Interactive Platform Grid */}
-                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-2.5 max-h-[580px] overflow-y-auto pr-1">
-                            {socialPlatforms.map((platform) => (
-                                <a
-                                    key={platform.id}
-                                    href={platform.url}
-                                    target={platform.id === 'email' ? '_self' : '_blank'}
-                                    rel="noopener noreferrer"
-                                    className={`group flex items-center justify-between p-3 rounded-xl bg-white/[0.02] border border-white/10 hover:bg-white/[0.06] transition-all duration-300 ${platform.accent}`}
-                                >
-                                    <div className="flex items-center gap-3 min-w-0">
-                                        <div className="p-2.5 rounded-lg bg-white/5 border border-white/10 text-gray-300 group-hover:scale-110 transition-transform shrink-0">
-                                            <SocialIcon type={platform.iconType} size={18} />
-                                        </div>
-                                        <div className="min-w-0 text-left">
-                                            <div className="flex items-center gap-2">
-                                                <span className="text-sm font-semibold text-white group-hover:text-electric-blue transition-colors">
-                                                    {platform.name}
-                                                </span>
-                                                <span className={`text-[10px] px-1.5 py-0.2 rounded border font-mono ${platform.badgeBg}`}>
-                                                    {platform.category}
-                                                </span>
-                                            </div>
-                                            <span className="block text-xs text-gray-400 font-mono truncate group-hover:text-gray-200 transition-colors">
-                                                {platform.handle}
-                                            </span>
-                                        </div>
-                                    </div>
-                                    <ExternalLink size={14} className="text-gray-500 opacity-40 group-hover:opacity-100 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all shrink-0 ml-2" />
-                                </a>
-                            ))}
-                        </div>
-
-                        {/* Location indicator */}
-                        <div className="flex items-center gap-3 p-3 rounded-xl bg-white/[0.02] border border-white/5 text-gray-400 text-xs">
-                            <MapPin size={16} className="text-electric-blue shrink-0" />
-                            <span>Indian Institute of Technology Madras (IIT Madras) • Bhopal, India</span>
+                        {/* Fast Callout */}
+                        <div className="p-5 glass rounded-2xl border border-white/10">
+                            <h3 className="text-xs font-mono text-gray-300 uppercase tracking-wider mb-1 flex items-center gap-2">
+                                <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                                Available for Roles & Research
+                            </h3>
+                            <p className="text-xs text-gray-400 font-light leading-relaxed">
+                                Actively open to AI/ML engineering, autonomous systems internships, and research collaborations. Average response time: under 24 hours.
+                            </p>
                         </div>
                     </div>
 
-                    {/* SECTION 2 - CONTACT FORM */}
+                    {/* CONTACT FORM */}
                     <div className="lg:col-span-7">
-                        <div className="glass p-8 md:p-10 rounded-3xl border border-white/5 h-full relative overflow-hidden">
-                            {/* Decorative gradient blur */}
-                            <div className="absolute -top-40 -right-40 w-80 h-80 bg-electric-blue/10 rounded-full blur-[100px] pointer-events-none"></div>
-
-                            <form onSubmit={handleSubmit} className="relative z-10 flex flex-col h-full space-y-6">
-                                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div className="glass p-8 md:p-10 rounded-3xl border border-white/10 h-full relative overflow-hidden">
+                            <form onSubmit={handleSubmit} className="relative z-10 flex flex-col h-full space-y-4">
+                                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                                     <div>
-                                        <label htmlFor="name" className="block text-xs font-semibold text-gray-400 mb-2 uppercase tracking-widest">Full Name</label>
+                                        <label htmlFor="name" className="block text-xs font-mono text-gray-400 mb-1.5 uppercase tracking-wider">Full Name</label>
                                         <input
                                             type="text"
                                             id="name"
@@ -124,12 +117,12 @@ ${formData.message}
                                             value={formData.name}
                                             onChange={handleChange}
                                             required
-                                            className="w-full bg-black/40 border border-white/10 rounded-xl px-5 py-3.5 text-white text-sm focus:outline-none focus:border-electric-blue focus:ring-1 focus:ring-electric-blue/50 transition-all placeholder:text-gray-600 font-light"
+                                            className="w-full bg-black/50 border border-white/10 rounded-xl px-4 py-2.5 text-white text-xs md:text-sm focus:outline-none focus:border-white/40 transition-all placeholder:text-gray-600 font-light"
                                             placeholder="John Doe"
                                         />
                                     </div>
                                     <div>
-                                        <label htmlFor="email" className="block text-xs font-semibold text-gray-400 mb-2 uppercase tracking-widest">Email Address</label>
+                                        <label htmlFor="email" className="block text-xs font-mono text-gray-400 mb-1.5 uppercase tracking-wider">Email Address</label>
                                         <input
                                             type="email"
                                             id="email"
@@ -137,27 +130,27 @@ ${formData.message}
                                             value={formData.email}
                                             onChange={handleChange}
                                             required
-                                            className="w-full bg-black/40 border border-white/10 rounded-xl px-5 py-3.5 text-white text-sm focus:outline-none focus:border-electric-blue focus:ring-1 focus:ring-electric-blue/50 transition-all placeholder:text-gray-600 font-light"
+                                            className="w-full bg-black/50 border border-white/10 rounded-xl px-4 py-2.5 text-white text-xs md:text-sm focus:outline-none focus:border-white/40 transition-all placeholder:text-gray-600 font-light"
                                             placeholder="john@example.com"
                                         />
                                     </div>
                                 </div>
 
-                                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                                     <div>
-                                        <label htmlFor="phone" className="block text-xs font-semibold text-gray-400 mb-2 uppercase tracking-widest">Phone Number (Optional)</label>
+                                        <label htmlFor="phone" className="block text-xs font-mono text-gray-400 mb-1.5 uppercase tracking-wider">Phone (Optional)</label>
                                         <input
                                             type="tel"
                                             id="phone"
                                             name="phone"
                                             value={formData.phone}
                                             onChange={handleChange}
-                                            className="w-full bg-black/40 border border-white/10 rounded-xl px-5 py-3.5 text-white text-sm focus:outline-none focus:border-electric-blue focus:ring-1 focus:ring-electric-blue/50 transition-all placeholder:text-gray-600 font-light"
+                                            className="w-full bg-black/50 border border-white/10 rounded-xl px-4 py-2.5 text-white text-xs md:text-sm focus:outline-none focus:border-white/40 transition-all placeholder:text-gray-600 font-light"
                                             placeholder="+91 98765 43210"
                                         />
                                     </div>
                                     <div>
-                                        <label htmlFor="subject" className="block text-xs font-semibold text-gray-400 mb-2 uppercase tracking-widest">Subject</label>
+                                        <label htmlFor="subject" className="block text-xs font-mono text-gray-400 mb-1.5 uppercase tracking-wider">Subject</label>
                                         <input
                                             type="text"
                                             id="subject"
@@ -165,42 +158,42 @@ ${formData.message}
                                             value={formData.subject}
                                             onChange={handleChange}
                                             required
-                                            className="w-full bg-black/40 border border-white/10 rounded-xl px-5 py-3.5 text-white text-sm focus:outline-none focus:border-electric-blue focus:ring-1 focus:ring-electric-blue/50 transition-all placeholder:text-gray-600 font-light"
-                                            placeholder="Research Collaboration / Project Inquiry"
+                                            className="w-full bg-black/50 border border-white/10 rounded-xl px-4 py-2.5 text-white text-xs md:text-sm focus:outline-none focus:border-white/40 transition-all placeholder:text-gray-600 font-light"
+                                            placeholder="AI Fellowship / Engineering Inquiry"
                                         />
                                     </div>
                                 </div>
 
                                 <div className="flex-grow">
-                                    <label htmlFor="message" className="block text-xs font-semibold text-gray-400 mb-2 uppercase tracking-widest">Message</label>
+                                    <label htmlFor="message" className="block text-xs font-mono text-gray-400 mb-1.5 uppercase tracking-wider">Message</label>
                                     <textarea
                                         id="message"
                                         name="message"
                                         value={formData.message}
                                         onChange={handleChange}
                                         required
-                                        rows={6}
-                                        className="w-full h-full min-h-[150px] bg-black/40 border border-white/10 rounded-xl px-5 py-4 text-white text-sm focus:outline-none focus:border-electric-blue focus:ring-1 focus:ring-electric-blue/50 transition-all resize-none placeholder:text-gray-600 font-light"
+                                        rows={4}
+                                        className="w-full h-full min-h-[120px] bg-black/50 border border-white/10 rounded-xl px-4 py-3 text-white text-xs md:text-sm focus:outline-none focus:border-white/40 transition-all resize-none placeholder:text-gray-600 font-light"
                                         placeholder="Hello Ishaan, I would like to discuss..."
                                     />
                                 </div>
 
-                                <div className="pt-4 flex items-center justify-between">
+                                <div className="pt-2 flex items-center justify-between">
                                     {submitted ? (
-                                        <span className="text-electric-blue text-sm font-medium tracking-wide animate-fade-in flex items-center">
-                                            Message sent successfully.
+                                        <span className="text-emerald-400 text-xs font-mono tracking-wide">
+                                            ✓ Form ready in email client.
                                         </span>
                                     ) : (
-                                        <span className="text-transparent">Placeholder</span> // To keep justify-between aligned
+                                        <span></span>
                                     )}
 
                                     <button
                                         type="submit"
                                         disabled={isSubmitting}
-                                        className="px-8 py-3.5 rounded-xl border border-electric-blue/50 text-electric-blue font-semibold hover:bg-electric-blue hover:text-black focus:outline-none transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed flex items-center group text-sm tracking-wide"
+                                        className="px-6 py-2.5 rounded-xl bg-white text-black font-semibold hover:bg-gray-200 transition-all text-xs tracking-wider uppercase cursor-pointer flex items-center gap-2 shadow-[0_0_15px_rgba(255,255,255,0.2)] disabled:opacity-50"
                                     >
-                                        {isSubmitting ? 'Sending...' : 'Send Message'}
-                                        {!isSubmitting && <Send size={16} className="ml-2 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300" />}
+                                        {isSubmitting ? 'Preparing...' : 'Send Message'}
+                                        <Send size={13} />
                                     </button>
                                 </div>
                             </form>
@@ -209,11 +202,48 @@ ${formData.message}
 
                 </div>
 
-                {/* SECTION 3 - OPTIONAL PROFESSIONAL NOTE */}
-                <div className="mt-28 mb-10 text-center border-t border-white/10 pt-10 mx-auto max-w-lg">
-                    <p className="text-gray-500 text-sm font-light tracking-wide italic">
-                        "I value meaningful technical conversations and research-driven collaboration. Feel free to reach out."
-                    </p>
+                {/* 8 CONNECT PLATFORMS SECTION */}
+                <div>
+                    <div className="flex items-center justify-between mb-8 pb-3 border-b border-white/10">
+                        <h2 className="text-xl md:text-2xl font-bold flex items-center text-white">
+                            <Globe className="mr-3 text-white" size={22} />
+                            Verified Developer & Academic Platforms
+                        </h2>
+                        <span className="text-xs font-mono text-gray-400 uppercase tracking-widest">
+                            8 Profiles
+                        </span>
+                    </div>
+
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                        {socialPlatforms.map((platform) => (
+                            <a
+                                key={platform.id}
+                                href={platform.url}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="glass p-5 rounded-2xl border border-white/10 hover:border-white/25 transition-all group flex flex-col justify-between"
+                            >
+                                <div>
+                                    <div className="flex items-center justify-between mb-3">
+                                        <div className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-white group-hover:scale-105 transition-transform">
+                                            <SocialIcon type={platform.iconType} size={18} />
+                                        </div>
+                                        <span className={`px-2 py-0.5 rounded text-[10px] font-mono border ${platform.badgeBg}`}>
+                                            {platform.category}
+                                        </span>
+                                    </div>
+                                    <h3 className="text-sm font-bold text-white mb-0.5">{platform.name}</h3>
+                                    <p className="text-xs font-mono text-gray-400 mb-2 truncate">{platform.handle}</p>
+                                    <p className="text-[11px] text-gray-400 font-light leading-relaxed line-clamp-2">{platform.description}</p>
+                                </div>
+
+                                <div className="mt-4 pt-3 border-t border-white/5 flex items-center justify-between text-[11px] font-mono text-gray-400 group-hover:text-white transition-colors">
+                                    <span>Connect</span>
+                                    <ExternalLink size={12} />
+                                </div>
+                            </a>
+                        ))}
+                    </div>
                 </div>
 
             </div>

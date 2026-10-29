@@ -4,65 +4,60 @@
 @theme {
   --color-electric-blue: #06b6d4; /* Vibrant Cyan */
   --color-neon-violet: #8b5cf6; /* Deep glowing Violet */
-  --color-dark-bg: #050505; /* Deeper black */
-  --color-dark-surface: #0a0f1d; /* Deep blue-tinted dark surface */
-  --font-sans: 'Inter', 'Space Grotesk', system-ui, sans-serif;
+  --color-dark-bg: #030405; /* Deep Linear near-black canvas */
+  --color-dark-surface: #0e1013; /* Precision charcoal panel surface */
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
 
   --animate-blob: blob 7s infinite;
 }
 
 @layer base {
   body {
-    @apply bg-dark-bg text-gray-100 font-sans antialiased overflow-x-hidden cursor-none select-none;
-    -webkit-user-select: none;
-    user-select: none;
+    @apply bg-dark-bg text-gray-100 font-sans antialiased overflow-x-hidden;
   }
 
-  input,
-  textarea {
-    @apply select-text;
-    -webkit-user-select: text;
-    user-select: text;
+  @media (hover: hover) and (pointer: fine) {
+    body {
+      cursor: none;
+    }
+  }
+
+  /* Allow comfortable text selection for recruiters & developers */
+  ::selection {
+    background: rgba(255, 255, 255, 0.2);
+    color: #ffffff;
   }
 }
 
 @layer utilities {
   .glass {
-    @apply bg-dark-surface/60 backdrop-blur-xl border border-electric-blue/20 shadow-[0_4px_30px_rgba(6,182,212,0.15)] relative overflow-hidden;
+    @apply bg-dark-surface/70 backdrop-blur-xl border border-white/10 shadow-[0_8px_30px_rgba(0,0,0,0.5)] relative overflow-hidden;
     transition: all 0.3s ease;
   }
   
   .glass:hover {
-    @apply border-electric-blue/40 shadow-[0_8px_40px_rgba(6,182,212,0.25)];
-  }
-
-  .glass::before {
-    content: '';
-    @apply absolute inset-0 bg-gradient-to-br from-electric-blue/5 to-neon-violet/5 opacity-0 transition-opacity duration-300 pointer-events-none;
-  }
-
-  .glass:hover::before {
-    @apply opacity-100;
+    @apply border-white/20 shadow-[0_12px_40px_rgba(0,0,0,0.7)];
   }
 
   .text-gradient {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-electric-blue via-blue-400 to-neon-violet drop-shadow-[0_0_15px_rgba(6,182,212,0.3)];
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-white via-gray-200 to-gray-400;
   }
 }
 
 /* Custom Scrollbar */
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 7px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #0d0d0d;
+  background: #050608;
 }
 
 ::-webkit-scrollbar-thumb {
-  @apply bg-white/20 rounded-full;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 9999px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  @apply bg-white/50;
+  background: rgba(255, 255, 255, 0.35);
 }
