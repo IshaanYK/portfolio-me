@@ -5,6 +5,22 @@ import { Link } from 'react-router-dom';
 
 const projects = [
     {
+        id: "beyond-weight-space",
+        title: "Beyond Weight-Space Programming (SP-SV-WSP)",
+        subtitle: "Language Models Can Rewrite Their Own Weights Without Collapsing",
+        badge: "Flagship Research Platform",
+        category: "Autonomous Weight Surgery & Null-Space Geometry",
+        overview: "Democratized neural weight surgery below the 27B parameter barrier identified by Jiajun Fan et al. (arXiv:2611.21885). Implemented closed-form Tikhonov null-space projection (P_null = I - C(C + lambda*I)^-1) on local weights (SmolLM2-360M and Qwen2.5-0.5B), achieving 99.97% manifold invariance and eliminating discrete failure attractors with zero runtime inference overhead. Deployed an editorial interactive research platform with real-time isometric 3D canvas animations and a matrix repair simulator.",
+        tech: ["PyTorch", "Hugging Face", "Closed-Form SVD", "Tikhonov Projection", "SmolLM2", "Qwen2.5", "Canvas 2D Engine", "GitHub Pages"],
+        buttons: [
+            { label: "Live Interactive Site →", url: "https://ishaanyk.github.io/beyond-weight-space/", type: "external" },
+            { label: "GitHub Repository →", url: "https://github.com/IshaanYK/beyond-weight-space", type: "github" },
+            { label: "Research Manuscript →", url: "https://github.com/IshaanYK/beyond-weight-space/blob/main/docs/beyond_weight_space_programming_manuscript.md", type: "external" }
+        ],
+        accent: "border-teal-500/40",
+        highlight: true
+    },
+    {
         id: "arise",
         title: "A.R.I.S.E.",
         subtitle: "Artificial Responsive Intelligent System Environment",

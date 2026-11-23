@@ -83,6 +83,47 @@ export default function Research() {
                 </div>
 
                 <div className="flex flex-col gap-16 md:gap-24">
+                    {/* FEATURED BREAKTHROUGH RESEARCH PREPRINT */}
+                    <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.7 }}
+                        className="w-full glass rounded-3xl p-8 md:p-10 border border-teal-500/30 bg-gradient-to-br from-teal-950/20 via-black to-slate-950/40 relative overflow-hidden shadow-2xl"
+                    >
+                        <div className="flex flex-wrap items-center gap-2 mb-4">
+                            <span className="px-3 py-1 rounded-full bg-teal-500/20 text-teal-300 border border-teal-500/40 text-xs font-mono font-semibold">
+                                PREPRINT &amp; LIVE PLATFORM (NOV 2026)
+                            </span>
+                            <span className="px-3 py-1 rounded-full bg-white/5 text-gray-300 border border-white/10 text-xs font-mono">
+                                Fan et al. (2026) vs. SP-SV-WSP
+                            </span>
+                        </div>
+                        <h2 className="text-2xl md:text-3xl font-bold text-white mb-3">
+                            Language Models Can Rewrite Their Own Weights Without Collapsing
+                        </h2>
+                        <p className="text-gray-300 text-sm md:text-base leading-relaxed mb-6 max-w-3xl font-light">
+                            Democratizing autonomous neural weight surgery below the 27B parameter barrier identified by Jiajun Fan et al. By projecting updates into the closed-form empirical null space <code className="text-teal-300">P_null = I - C_train(C_train + λI)⁻¹</code>, models as compact as SmolLM2-360M and Qwen2.5-0.5B eliminate runaway repetition loops with <strong>99.97% manifold invariance</strong>. Includes live isometric 3D transformer plates and an interactive matrix repair simulator.
+                        </p>
+                        <div className="flex flex-wrap gap-3">
+                            <a
+                                href="https://ishaanyk.github.io/beyond-weight-space/"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-teal-500 text-black font-semibold hover:bg-teal-400 transition-all text-xs shadow-lg shadow-teal-500/20"
+                            >
+                                <span>Explore Interactive Research Website →</span>
+                            </a>
+                            <a
+                                href="https://github.com/IshaanYK/beyond-weight-space"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-white/10 text-white font-medium hover:bg-white/15 border border-white/15 transition-all text-xs"
+                            >
+                                <span>GitHub Repository &amp; Benchmarks →</span>
+                            </a>
+                        </div>
+                    </motion.div>
                     {/* CURRENT RESEARCH INTERESTS */}
                     <div className="flex flex-col md:flex-row gap-8 md:gap-16">
                         <div className="md:w-1/3">

@@ -165,6 +165,48 @@ export default function Home() {
                     ))}
                 </motion.div>
 
+                {/* FEATURED BREAKTHROUGH RESEARCH PREPRINT BANNER */}
+                <motion.section
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, margin: "-100px" }}
+                    transition={{ duration: 0.8 }}
+                    className="w-full max-w-4xl mb-24 glass rounded-3xl p-8 md:p-10 border border-teal-500/30 bg-gradient-to-br from-teal-950/20 via-black to-slate-950/40 relative overflow-hidden shadow-2xl text-left"
+                >
+                    <div className="flex flex-wrap items-center gap-2 mb-3">
+                        <span className="px-3 py-1 rounded-full bg-teal-500/20 text-teal-300 border border-teal-500/40 text-xs font-mono font-semibold">
+                            NEW RESEARCH &amp; INTERACTIVE PLATFORM
+                        </span>
+                        <span className="px-3 py-1 rounded-full bg-white/5 text-gray-300 border border-white/10 text-xs font-mono">
+                            arXiv:2611.21885 vs. SP-SV-WSP
+                        </span>
+                    </div>
+                    <h3 className="text-2xl md:text-3xl font-bold mb-3 text-white tracking-tight">
+                        Language Models Can Rewrite Their Own Weights Without Collapsing
+                    </h3>
+                    <p className="text-gray-300 max-w-3xl mb-6 leading-relaxed font-light text-sm md:text-base">
+                        Breaking the 27B parameter scale barrier in autonomous weight surgery. Closed-form Tikhonov null-space projection allows compact models (360M &amp; 500M) to safely repair discrete failure attractors with <strong>99.97% manifold invariance</strong>.
+                    </p>
+                    <div className="flex flex-wrap gap-3">
+                        <a
+                            href="https://ishaanyk.github.io/beyond-weight-space/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="px-5 py-2.5 rounded-xl bg-teal-500 text-black font-semibold text-xs hover:bg-teal-400 transition-all flex items-center gap-2 shadow-lg shadow-teal-500/20"
+                        >
+                            Explore Live Animated Site <ArrowRight size={14} />
+                        </a>
+                        <a
+                            href="https://github.com/IshaanYK/beyond-weight-space"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="px-5 py-2.5 rounded-xl bg-white/10 hover:bg-white/15 border border-white/15 text-white font-medium text-xs transition-all"
+                        >
+                            GitHub Repository
+                        </a>
+                    </div>
+                </motion.section>
+
                 {/* FEATURED PROJECT SECTION */}
                 <motion.section
                     initial={{ opacity: 0, y: 30 }}
