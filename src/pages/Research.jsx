@@ -106,21 +106,27 @@ export default function Research() {
                             Democratizing autonomous neural weight surgery below the 27B parameter barrier identified by Jiajun Fan et al. By projecting updates into the closed-form empirical null space <code className="text-teal-300">P_null = I - C_train(C_train + λI)⁻¹</code>, models as compact as SmolLM2-360M and Qwen2.5-0.5B eliminate runaway repetition loops with <strong>99.97% manifold invariance</strong>. Includes live isometric 3D transformer plates and an interactive matrix repair simulator.
                         </p>
                         <div className="flex flex-wrap gap-3">
+                            <Link
+                                to="/beyond-weight-space"
+                                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-teal-500 text-black font-semibold hover:bg-teal-400 transition-all text-xs shadow-lg shadow-teal-500/20"
+                            >
+                                <span>Dedicated Research Page &amp; Live Embed →</span>
+                            </Link>
                             <a
                                 href="https://ishaanyk.github.io/beyond-weight-space/"
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-teal-500 text-black font-semibold hover:bg-teal-400 transition-all text-xs shadow-lg shadow-teal-500/20"
+                                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-white/10 text-white font-medium hover:bg-white/15 border border-white/15 transition-all text-xs"
                             >
-                                <span>Explore Interactive Research Website →</span>
+                                <span>Live Interactive Site ↗</span>
                             </a>
                             <a
                                 href="https://github.com/IshaanYK/beyond-weight-space"
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-white/10 text-white font-medium hover:bg-white/15 border border-white/15 transition-all text-xs"
+                                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-white/5 text-gray-300 hover:text-white hover:bg-white/10 border border-white/10 transition-all text-xs"
                             >
-                                <span>GitHub Repository &amp; Benchmarks →</span>
+                                <span>GitHub Repository ↗</span>
                             </a>
                         </div>
                     </motion.div>

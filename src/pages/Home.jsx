@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import mammoth from 'mammoth';
 import PageTransition from '../components/PageTransition';
-import { X, Maximize2, Minimize2, Heart, Award, ArrowRight, Download, FileText, Cpu, Sparkles, Terminal } from 'lucide-react';
+import { X, Maximize2, Minimize2, Heart, Award, ArrowRight, Download, FileText, Cpu, Sparkles, Terminal, ExternalLink, Github } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 export default function Home() {
@@ -126,6 +126,14 @@ export default function Home() {
                     className="flex flex-wrap gap-3.5 justify-center mb-24"
                 >
                     <Link
+                        to="/beyond-weight-space"
+                        className="px-6 py-3 rounded-xl bg-teal-500 text-black font-semibold text-xs md:text-sm hover:bg-teal-400 transition-all shadow-[0_0_20px_rgba(20,184,166,0.35)] flex items-center gap-2 group"
+                    >
+                        <Sparkles size={15} />
+                        <span>Beyond Weight-Space</span>
+                        <ArrowRight size={15} className="group-hover:translate-x-0.5 transition-transform" />
+                    </Link>
+                    <Link
                         to="/projects"
                         className="px-6 py-3 rounded-xl bg-white text-black font-semibold text-xs md:text-sm hover:bg-gray-200 transition-all shadow-[0_0_20px_rgba(255,255,255,0.25)] flex items-center gap-2"
                     >
@@ -188,21 +196,29 @@ export default function Home() {
                         Breaking the 27B parameter scale barrier in autonomous weight surgery. Closed-form Tikhonov null-space projection allows compact models (360M &amp; 500M) to safely repair discrete failure attractors with <strong>99.97% manifold invariance</strong>.
                     </p>
                     <div className="flex flex-wrap gap-3">
+                        <Link
+                            to="/beyond-weight-space"
+                            className="px-5 py-2.5 rounded-xl bg-teal-500 text-black font-semibold text-xs hover:bg-teal-400 transition-all flex items-center gap-2 shadow-lg shadow-teal-500/20"
+                        >
+                            <span>Dedicated Research Page</span> <ArrowRight size={14} />
+                        </Link>
                         <a
                             href="https://ishaanyk.github.io/beyond-weight-space/"
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="px-5 py-2.5 rounded-xl bg-teal-500 text-black font-semibold text-xs hover:bg-teal-400 transition-all flex items-center gap-2 shadow-lg shadow-teal-500/20"
+                            className="px-5 py-2.5 rounded-xl bg-white/10 hover:bg-white/15 border border-white/15 text-white font-medium text-xs transition-all flex items-center gap-1.5"
                         >
-                            Explore Live Animated Site <ArrowRight size={14} />
+                            <ExternalLink size={13} />
+                            <span>Live Animated Website</span>
                         </a>
                         <a
                             href="https://github.com/IshaanYK/beyond-weight-space"
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="px-5 py-2.5 rounded-xl bg-white/10 hover:bg-white/15 border border-white/15 text-white font-medium text-xs transition-all"
+                            className="px-5 py-2.5 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 text-gray-300 hover:text-white font-medium text-xs transition-all flex items-center gap-1.5"
                         >
-                            GitHub Repository
+                            <Github size={13} />
+                            <span>GitHub</span>
                         </a>
                     </div>
                 </motion.section>

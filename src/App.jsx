@@ -31,6 +31,7 @@ import Experience from './pages/Experience';
 import Achievements from './pages/Achievements';
 import Resume from './pages/Resume';
 import Contact from './pages/Contact';
+import BeyondWeightSpace from './pages/BeyondWeightSpace';
 
 function AnimatedRoutes() {
   const location = useLocation();
@@ -39,6 +40,7 @@ function AnimatedRoutes() {
     <AnimatePresence mode="wait">
       <Routes location={location} key={location.pathname}>
         <Route path="/" element={<Home />} />
+        <Route path="/beyond-weight-space" element={<BeyondWeightSpace />} />
         <Route path="/about" element={<About />} />
         <Route path="/projects" element={<Projects />} />
         <Route path="/research" element={<Research />} />

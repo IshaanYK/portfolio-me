@@ -59,12 +59,12 @@ export default function Navbar() {
                     </Link>
 
                     {/* Desktop Menu */}
-                    <div className="hidden md:flex space-x-1 lg:space-x-4">
+                    <div className="hidden md:flex items-center space-x-1 lg:space-x-3">
                         {links.map((link) => (
                             <Link
                                 key={link.path}
                                 to={link.path}
-                                className={`px-3 py-2 rounded-md text-sm font-medium transition-all duration-200 relative group ${location.pathname === link.path ? 'text-white' : 'text-gray-400 hover:text-white'
+                                className={`px-2.5 py-1.5 rounded-md text-sm font-medium transition-all duration-200 relative group ${location.pathname === link.path ? 'text-white' : 'text-gray-400 hover:text-white'
                                     }`}
                             >
                                 {link.name}
@@ -78,6 +78,19 @@ export default function Navbar() {
                                 <div className="absolute inset-0 bg-white/5 rounded-md opacity-0 group-hover:opacity-100 transition-opacity" />
                             </Link>
                         ))}
+
+                        {/* Highlighted Button: Beyond Weight-Space */}
+                        <Link
+                            to="/beyond-weight-space"
+                            className={`ml-2 inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold tracking-wide transition-all border ${
+                                location.pathname === '/beyond-weight-space'
+                                    ? 'bg-teal-500 text-black border-teal-400 shadow-[0_0_15px_rgba(20,184,166,0.4)]'
+                                    : 'bg-teal-500/15 text-teal-300 border-teal-500/40 hover:bg-teal-500/25 hover:border-teal-400 shadow-[0_0_12px_rgba(20,184,166,0.2)]'
+                            }`}
+                        >
+                            <span className="w-1.5 h-1.5 rounded-full bg-teal-400 animate-pulse"></span>
+                            <span>Beyond Weight-Space</span>
+                        </Link>
                     </div>
 
                     {/* Mobile Menu Button */}
@@ -102,6 +115,18 @@ export default function Navbar() {
                         className="md:hidden glass absolute top-full left-0 w-full border-t border-white/10"
                     >
                         <div className="px-4 pt-2 pb-6 space-y-1 shadow-2xl">
+                            {/* Featured Beyond Weight-Space Link */}
+                            <Link
+                                to="/beyond-weight-space"
+                                onClick={() => setIsOpen(false)}
+                                className={`block px-3 py-3 rounded-md text-base font-semibold mb-2 ${location.pathname === '/beyond-weight-space'
+                                    ? 'bg-teal-500 text-black font-bold'
+                                    : 'bg-teal-500/15 text-teal-300 border border-teal-500/30'
+                                    }`}
+                            >
+                                ✨ Beyond Weight-Space (New Paper)
+                            </Link>
+
                             {links.map((link) => (
                                 <Link
                                     key={link.path}
